@@ -1,0 +1,97 @@
+.footer {
+  background: #f6f6f6;
+  border-top: 1px solid #e0e0e0;
+  padding: 2.5rem 1.5rem;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.left {
+  flex: 1;
+  min-width: 120px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.links {
+  display: flex;
+  flex: 3;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.column h4 {
+  color: #231f20; /* Z dark text */
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column li {
+  color: #3c3c3b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.column li:hover {
+  color: #ff8a00; /* Z orange hover */
+}
+
+/* Contact button top-right */
+.contactBtn {
+  background-color: #ff8a00;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  padding: 0.7rem 1.4rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.contactBtn:hover {
+  background-color: #e67800;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contactBtn {
+    position: static;
+    margin-top: 1.5rem;
+  }
+}

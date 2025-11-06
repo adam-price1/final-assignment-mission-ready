@@ -1,0 +1,112 @@
+.header {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 2.5rem;
+  border-bottom: 1px solid #e6e6e6;
+  font-family: "Inter", Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Left Section */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Orange pill */
+.personalBtn {
+  background: #ff8a00;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.45rem 1.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.personalBtn:hover {
+  background: #e67900;
+}
+
+/* Nav Section */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  align-items: center;
+}
+
+.nav li {
+  color: #2c2a29;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.nav li:hover {
+  color: #ff8a00;
+}
+
+/* Right Section */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.icon {
+  font-size: 1.3rem;
+  color: #2c2a29;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.icon:hover {
+  color: #ff8a00;
+}
+
+/* Purple Login button */
+.loginBtn {
+  background: #2e268f;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.45rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.loginBtn:hover {
+  background: #1f1770;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nav ul {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav {
+    display: none;
+  }
+}
