@@ -1,0 +1,27 @@
+.header1 {
+  width: 100%;
+  background: white; /* or transparent if needed */
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 40px; /* spacing between items */
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.navList li {
+  cursor: pointer;
+  white-space: nowrap; /* keeps text on one line */
+  position: relative;
+}
