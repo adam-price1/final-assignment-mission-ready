@@ -1,0 +1,165 @@
+/* Base layout */
+.container {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #ffb300, #ff6f00);
+  border-radius: 8px;
+  padding: 2rem;
+  color: white;
+  width: 90%;
+  margin: 2rem 0;
+}
+
+.heroLeft h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.heroRight img {
+  width: 320px;
+  border-radius: 8px;
+}
+
+/* Comparison Section */
+.comparison {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.comparison h3 {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Search Input + Button */
+.searchRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem 0;
+}
+
+.searchRow input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.searchRow button {
+  background-color: #4b2e83;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.searchRow button:hover {
+  background-color: #3a2367;
+}
+
+/* Results Section */
+.loading {
+  color: #555;
+  font-style: italic;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Price Cards */
+.card {
+  text-align: center;
+  color: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  width: 60px;
+  margin-bottom: 0.5rem;
+}
+
+.card h4 {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.card h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Gradient backgrounds based on price */
+.green {
+  background: linear-gradient(180deg, #43a047, #2e7d32);
+}
+
+.orange {
+  background: linear-gradient(180deg, #fb8c00, #ef6c00);
+}
+
+.yellow {
+  background: linear-gradient(180deg, #fdd835, #fbc02d);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroRight img {
+    width: 220px;
+    margin-top: 1rem;
+  }
+
+  .searchRow {
+    flex-direction: column;
+    width: 100%;
+  }
+}
