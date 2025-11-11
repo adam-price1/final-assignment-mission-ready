@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
 import zLogo from "/image/logo.png";
-import shoppingCart from "/image/icons/shoppingCart.png";
-import searchIcon from "/image/icons/searchIcon.png";
 
 function Header() {
   return (
@@ -14,25 +12,23 @@ function Header() {
 
       <nav className={styles.nav}>
         <ul>
-          <li>
-            How to enjoy Z station <span>▾</span>
-          </li>
-          <li>
-            Reward and promotion <span>▾</span>
-          </li>
-          <li>
-            Location <span>▾</span>
-          </li>
           <li>Z App</li>
           <li>About Z</li>
+          <li>
+            <button>
+              <img src="/image/icons/shoppingCart.png" alt="shoppingIcon" />
+            </button>
+          </li>
+          <li>
+            <button>
+              <img src="/image/icons/searchIcon.png" alt="searchIcon" />
+            </button>
+          </li>
+          <li>
+            <button className={styles.loginBtn}>Login ▸</button>
+          </li>
         </ul>
       </nav>
-
-      <div className={styles.right}>
-        <image src={shoppingCart} className={styles.icon} />
-        <image src={searchIcon} className={styles.icon} />
-        <button className={styles.loginBtn}>Login ▸</button>
-      </div>
     </header>
   );
 }

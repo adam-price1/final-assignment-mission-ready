@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  position: static;
+  width: 1920px;
+  color: white;
+}
+
+.header img {
+  width: 100%;
+  height: 100%;
+}

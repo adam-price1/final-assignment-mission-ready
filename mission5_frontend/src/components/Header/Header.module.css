@@ -3,11 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6rem 2.5rem;
+  padding: 1.6rem 2.5rem;
   border-bottom: 1px solid #e6e6e6;
   font-family: "Inter", Arial, sans-serif;
-  position: sticky;
+  position: static;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
 }
 
@@ -19,6 +21,7 @@
 }
 
 .logo {
+  margin-left: 3.98rem;
   height: 55px;
   width: auto;
   cursor: pointer;
@@ -29,10 +32,11 @@
   background: #ff8a00;
   color: #fff;
   border: none;
-  border-radius: 30px;
-  padding: 0.45rem 1.3rem;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin-left: 60px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.25s ease;
 }
@@ -44,7 +48,7 @@
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   margin: 0;
   padding: 0;
   font-size: 0.95rem;
@@ -55,7 +59,7 @@
   color: #2c2a29;
   cursor: pointer;
   transition: color 0.2s ease;
-  font-weight: 500;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -64,8 +68,17 @@
   color: #ff8a00;
 }
 
+.nav li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.nav li button:hover {
+  color: #ff8a00;
+}
+
 /* Right Section */
-.right {
+/* .right {
   display: flex;
   align-items: center;
   gap: 1.4rem;
@@ -79,22 +92,23 @@
 }
 .icon:hover {
   color: #ff8a00;
-}
+} */
 
 /* Purple Login button */
 .loginBtn {
-  background: #2e268f;
+  background: linear-gradient(to right, #1e196b, #3129ab);
   color: #fff;
   border: none;
-  border-radius: 25px;
-  padding: 0.45rem 1.2rem;
-  font-weight: 600;
-  font-size: 0.9rem;
+  border-radius: 10px;
+  padding: 0.95rem 0.5rem;
+  font-weight: 800;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.25s ease;
+  transition: background 1.25s ease;
 }
 .loginBtn:hover {
   background: #1f1770;
+  color: #fff;
 }
 
 /* Responsive */

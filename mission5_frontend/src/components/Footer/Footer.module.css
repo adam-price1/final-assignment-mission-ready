@@ -3,11 +3,15 @@
   border-top: 1px solid #e0e0e0;
   padding: 2.5rem 1.5rem;
   font-family: "Inter", sans-serif;
-  position: relative;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: justify;
 }
 
 .inner {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -18,7 +22,7 @@
 
 .left {
   flex: 1;
-  min-width: 120px;
+  min-width: 1920px;
 }
 
 .logo {
