@@ -3,12 +3,12 @@ import styles from "./FeaturesBlock.module.css";
 
 export default function FeatureBlock({
   title,
-  kicker, // small line above title (optional)
+  kicker,
   body,
   ctaLabel,
   imageSrc,
   imageAlt = "",
-  reverse = false, // put image on the right when false, on the left when true
+  reverse = false,
 }) {
   return (
     <section className={`${styles.block} ${reverse ? styles.reverse : ""}`}>

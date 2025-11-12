@@ -1,5 +1,4 @@
 import React from "react";
-import Header1 from "./Header/Header1";
 import FeatureBlock from "./HomeComponent/FeaturesBlock";
 // image import
 import homeBanner from "/image/banners/bannerHomePage.png";
@@ -11,7 +10,6 @@ import styles from "./Homepage.module.css";
 function Homepage() {
   return (
     <div>
-      <Header1 />
       <section className={styles.homeBanner}>
         <img src={homeBanner} alt="homepage banner" className={styles.banner} />
         <h1 className={styles.bannerText}>Welcome to Z</h1>

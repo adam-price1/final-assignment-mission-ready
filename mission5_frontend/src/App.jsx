@@ -4,6 +4,7 @@ import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 // -- Header & Footer Components
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Header1 from "./components/Header/Header1";
 
 // -- Order Online Overlay Components
 import DeclinedOverlayPage from "./components/OrderOnline/OverlayComponents/DeclinedOverlayPage";
@@ -29,7 +30,7 @@ function App() {
     <>
       {/* ✅ Header hidden on overlay routes */}
       {!excludedRoutes.includes(location.pathname) && <Header />}
-
+      <Header1 />
       <Routes>
         {/* 🌐 Main Pages */}
         <Route path="/" element={<Homepage />} />
