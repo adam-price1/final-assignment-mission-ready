@@ -1,0 +1,48 @@
+.homeBanner,
+.findStationBanner {
+  position: relative;
+  width: 100%;
+  height: 200px; /* or whatever height your banner should have */
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.banner {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  padding-bottom: 20px;
+}
+
+.bannerText {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.heroImage {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.findStationText {
+  position: absolute;
+  top: 15%;
+  left: 100px;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.homeButton {
+  position: absolute;
+  bottom: 35%;
+  left: 100px;
+}

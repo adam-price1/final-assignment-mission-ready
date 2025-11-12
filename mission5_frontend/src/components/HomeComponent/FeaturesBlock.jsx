@@ -1,0 +1,27 @@
+// components/FeatureBlock.jsx
+import styles from "./FeaturesBlock.module.css";
+
+export default function FeatureBlock({
+  title,
+  kicker, // small line above title (optional)
+  body,
+  ctaLabel,
+  imageSrc,
+  imageAlt = "",
+  reverse = false, // put image on the right when false, on the left when true
+}) {
+  return (
+    <section className={`${styles.block} ${reverse ? styles.reverse : ""}`}>
+      <div className={styles.media}>
+        <img src={imageSrc} alt={imageAlt} />
+      </div>
+
+      <div className={styles.content}>
+        {kicker && <p className={styles.kicker}>{kicker}</p>}
+        <h2 className={styles.h2}>{title}</h2>
+        {body && <p className={styles.body}>{body}</p>}
+        {ctaLabel && <a className={styles.button}>{ctaLabel}</a>}
+      </div>
+    </section>
+  );
+}
