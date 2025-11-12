@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+.overlayWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ececf3;
+}
+
+.overlayContainer {
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Overlay Sizes */
+.paymentOverlay,
+.confirmOverlay {
+  width: 530px;
+  height: 735px;
+}
+
+.declinedOverlay {
+  width: 320px;
+  height: 347px;
+}
+
+/* Header Images */
+.overlayHeader img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text Styling */
+.overlayText {
+  color: #000000;
+  line-height: 1.5;
+  margin: 30px auto 0;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.confirmText {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.declinedText {
+  font-size: 12px;
+  width: 230px;
+  margin: 20px auto;
+}
+
+/* Form Fields */
+.formField {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 14px;
+  margin: 20px 40px;
+}
+
+.formField label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.formField input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.formField input::placeholder {
+  color: #b1b1b1;
+}
+
+/* Buttons */
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.btnCancel {
+  border: 1px solid #2c2c54;
+  background: transparent;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-weight: 500;
+  color: #2c2c54;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnCancel:hover {
+  background-color: #f2f2f2;
+}
+
+.btnPrimary {
+  background: linear-gradient(90deg, #2c2c54 0%, #5e5bf4 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnPrimary:hover {
+  opacity: 0.9;
+}
+
+/* Confirm / Declined Images */
+.confirmImage,
+.declinedImage {
+  display: block;
+  margin: 30px auto;
+  height: 60px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .paymentOverlay,
+  .confirmOverlay,
+  .declinedOverlay {
+    width: 95%;
+    height: auto;
+  }
+
+  .overlayText {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btnCancel,
+  .btnPrimary {
+    width: 100%;
+  }
+}
