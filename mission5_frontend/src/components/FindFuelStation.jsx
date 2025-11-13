@@ -104,7 +104,7 @@ function StationMap({ stations }) {
     <MapContainer
       center={center}
       zoom={13}
-      style={{ height: "480px", width: "100%", borderRadius: "16px" }}  // ⬅️ force size
+      style={{ height: "480px", width: "100%", borderRadius: "16px",  }}
       scrollWheelZoom
       className={styles.mapBox} // keep this too; we’ll move back to CSS after it works
     >
