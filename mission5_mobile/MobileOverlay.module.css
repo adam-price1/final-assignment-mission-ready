@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+.screenBg {
+  min-height: 100svh;
+  background-color: #ececf3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  font-family: "Roboto", system-ui, -apple-system, sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 390px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.body {
+  padding: 16px;
+  text-align: center;
+}
+
+.text {
+  font-size: 15px;
+  color: #1c1c1c;
+  line-height: 1.5;
+}
+
+.footerButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border-radius: 22px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.btnGhost {
+  background: #fff;
+  color: #2c2c54;
+  border: 1px solid #2c2c54;
+}
+
+.btnPrimary {
+  background: linear-gradient(90deg, #2c2c54 0%, #5e5bf4 100%);
+  color: #fff;
+}
+
+.input {
+  appearance: none;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.25;
+  border: 1px solid #d8d8de;
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+  background: #fff;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1c1c1c;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 340px) {
+  .footerButtons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Footer Styling --- */
+.mobileFooter {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footerIcons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+}
+
+.footerBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #2c2c54;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footerBtn:hover {
+  color: #5e5bf4;
+  transform: scale(1.1);
+}
