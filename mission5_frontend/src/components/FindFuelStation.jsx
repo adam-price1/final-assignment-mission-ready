@@ -173,9 +173,17 @@ export default function FindFuelStation() {
  
   return (
     <main className={styles.container}>
-      <section className={styles.hero}>
-        <h1 className={styles.heroTitle}>Find a Fuel Station</h1>
-      </section>
+      <section
+  className={styles.hero}
+  style={{
+    backgroundImage: "url('/image/banners/banner.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  <h1 className={styles.heroTitle}>Find a Fuel Station</h1>
+</section>
+
       <SearchBar />
 
       <div className={styles.grid}>
