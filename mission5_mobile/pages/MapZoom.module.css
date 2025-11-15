@@ -1,0 +1,86 @@
+.stationcard{
+    width:360px;
+    background:linear-gradient(180deg, #ff7e00, #ffd400); 
+    padding:20px;
+    border-radius:16px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.stationtitle{
+    margin:0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.stationaddress{
+    margin-top:4px;
+    font-size: 13px;
+    opacity:0.9;
+}
+
+.stationhours{
+    margin-top:16px;
+}
+
+.stationhoursRow{
+display:flex;
+justify-content: space-between;
+font-size: 13px;
+}
+
+.stationsectionTitle{
+    margin-top:16px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.stationiconRow{
+    display:flex;
+    gap:10px;
+    margin:8px 0 20px;
+}
+
+.stationiconRow img {
+    width:28px;
+    height:28px;
+}
+
+.stationbigButton{
+    background: white;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stationbtnTitle{
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+}
+
+.stationlink{
+    font-size: 13px;
+    color: blue;
+    cursor: pointer;
+}
+
+.stationbtnIcon{
+    width: 55px;
+    height:55px;
+}
+
+.stationphoneRow{
+    display: flex;
+    align-items: center;
+    gap:8px;
+    font-size: 14px;
+}
+
+.stationphoneIcon{
+    width: 18px;
+    height: 18px;
+}
