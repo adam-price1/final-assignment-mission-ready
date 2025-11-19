@@ -1,0 +1,58 @@
+/* MoreMenu.module.css */
+
+.screen {
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.backIcon {
+  width: 20px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2147;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: #4c4c61;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #ececf3;
+}
+
+.rowLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rowIcon {
+  width: 20px;
+}
+
+.rowLabel {
+  font-size: 14px;
+  color: #2c2c54;
+}
+
+.arrowIcon {
+  width: 14px;
+}

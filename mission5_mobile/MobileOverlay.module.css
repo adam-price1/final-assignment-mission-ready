@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-/* FULL SCREEN BACKGROUND */
+/* -------------------------------------------
+   FULL SCREEN BACKGROUND
+-------------------------------------------- */
 .screenBg {
   height: 100svh;
   width: 100%;
@@ -14,21 +16,38 @@
   margin: 0;
 }
 
-/* MOBILE APP CONTAINER (scrollable above footer) */
+/* -------------------------------------------
+   MAIN APP CONTAINER (card)
+   — FIXED: No rounded corners at top
+   — FIXED: Always full width on mobile
+   — FIXED: Full height with/without footer
+-------------------------------------------- */
 .card {
   width: 100%;
   max-width: 390px;
-  background: #fff;
-  border-radius: 16px 16px 0 0;
-  overflow-y: auto;
-  flex-grow: 1;
 
-  /* Ensure content fits above footer */
+  /* remove rounded top corners */
+  border-radius: 0;
+
+  background: #fff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  /* default = full height minus footer */
   height: calc(100svh - 64px);
   margin: 0 auto;
 }
 
-/* ---- FOOTER NAVIGATION BAR ---- */
+/* When footer hidden → full height */
+.noFooter {
+  height: 100svh !important;
+  padding-bottom: 0 !important;
+}
+
+/* -------------------------------------------
+   FOOTER NAVIGATION
+-------------------------------------------- */
 .mobileFooter {
   position: fixed;
   bottom: 0;
@@ -36,7 +55,7 @@
   transform: translateX(-50%);
   width: 100%;
   max-width: 390px;
-  height: 64px; /* increased for breathing room */
+  height: 64px;
   background: #ffffff;
   border-top: 1px solid #e0e0e0;
 
@@ -46,7 +65,6 @@
 
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 
-  /* ✅ Adds space above icons (iPhone safe area + fallback) */
   padding-bottom: env(safe-area-inset-bottom, 8px);
 }
 
@@ -77,12 +95,13 @@
   color: #6b7280;
 }
 
-/* ACTIVE TAB */
 .footerBtnActive .footerLabel {
   color: #f97316 !important;
 }
 
-/* TAB BAR (for Sharetank and others that use the internal bar) */
+/* -------------------------------------------
+   Sharetank Tab Bar
+-------------------------------------------- */
 .tabBar {
   border-top: 1px solid #e5e7eb;
   padding: 6px 6px 12px;
@@ -115,7 +134,6 @@
 }
 
 .tabLabelActive {
-  font-size: 11px;
   color: #f97316 !important;
   font-weight: 600;
 }

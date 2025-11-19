@@ -1,0 +1,83 @@
+/* TopUpOverlay.module.css */
+
+.overlayContainer {
+  padding: 20px 16px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2147;
+}
+
+.closeBtn {
+  font-size: 22px;
+  cursor: pointer;
+  color: #5e5bf4;
+}
+
+.cardBox {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid #e4e4ea;
+}
+
+.cardLabel {
+  font-size: 12px;
+  color: #7d7d89;
+  margin-bottom: 6px;
+}
+
+.cardNumber {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c2c54;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amountSection {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.amountLabel {
+  font-size: 13px;
+  color: #7d7d89;
+}
+
+.amountNumber {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btnPrimary {
+  margin-top: 20px;
+  background: #2c2c54;
+  color: #fff;
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}

@@ -1,0 +1,64 @@
+/* AddCardDetails.module.css */
+
+.container {
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.statusBar {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+}
+
+.cardIcon {
+  width: 40px;
+  height: 24px;
+  margin-left: auto;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 100%;
+  background: #2c2c54;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #25254b;
+}
