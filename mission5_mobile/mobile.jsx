@@ -35,22 +35,49 @@ import ThankYouPage from "./pages/ThankYouPage";
 import TopUpOverlay from "./pages/TopUpOverlay";
 import VegetarianFoodPage from "./pages/VegetarianFoodPage";
 
-/* --- FOOTER (bottom tabs) --- */
+/* --- BOTTOM FOOTER (tabs) --- */
 function MobileFooter() {
   return (
     <footer className={styles.mobileFooter}>
       <div className={styles.footerIcons}>
+        {/* HOME */}
         <Link to="/mobile/home" className={styles.footerBtn}>
-          🏠 Home
+          <img
+            src="/image/icons/zicons/house.svg"
+            alt="Home"
+            className={styles.tabIconImg}
+          />
+          <span className={styles.footerLabel}>Home</span>
         </Link>
-        <Link to="/mobile/map" className={styles.footerBtn}>
-          🗺️ Map
+
+        {/* QR CODE */}
+        <Link to="/mobile/scan" className={styles.footerBtn}>
+          <img
+            src="/image/icons/qrcode.svg"
+            alt="QR Code"
+            className={styles.tabIconImg}
+          />
+          <span className={styles.footerLabel}>QR Code</span>
         </Link>
-        <Link to="/mobile/orders" className={styles.footerBtn}>
-          🛍️ Orders
+
+        {/* SHARETANK */}
+        <Link to="/mobile/sharetank" className={styles.footerBtn}>
+          <img
+            src="/image/icons/zicons/appfueltank.svg"
+            alt="ShareTank"
+            className={styles.tabIconImg}
+          />
+          <span className={styles.footerLabel}>ShareTank</span>
         </Link>
+
+        {/* MORE */}
         <Link to="/mobile/more" className={styles.footerBtn}>
-          ⚙️ More
+          <img
+            src="/image/icons/zicons/hamburger.svg"
+            alt="More"
+            className={styles.tabIconImg}
+          />
+          <span className={styles.footerLabel}>More</span>
         </Link>
       </div>
     </footer>
@@ -62,7 +89,7 @@ export default function MobileApp() {
     <div className={styles.screenBg}>
       <div className={styles.card}>
         <Routes>
-          {/* Onboarding Flow */}
+          {/* Onboarding */}
           <Route index element={<Onboarding1 />} />
           <Route path="onboarding2" element={<Onboarding2 />} />
           <Route path="onboarding3" element={<Onboarding3 />} />
@@ -81,14 +108,12 @@ export default function MobileApp() {
 
           <Route path="order-food-home" element={<OrderFoodHome />} />
 
-          {/* Map Screens */}
+          {/* Maps */}
           <Route path="map" element={<Map1 />} />
           <Route path="map-zoom" element={<MapZoom />} />
           <Route path="map-kingsway" element={<KingswayMap />} />
 
-
-
-          {/* Payments / Cards */}
+          {/* Payments */}
           <Route path="add-card" element={<AddCardDetails />} />
           <Route path="card-success" element={<CardSuccess />} />
           <Route path="add-vehicle" element={<AddVehicle />} />
@@ -109,17 +134,7 @@ export default function MobileApp() {
           <Route path="thanks" element={<ThankYouPage />} />
           <Route path="veg-food" element={<VegetarianFoodPage />} />
 
-          {/* Orders Placeholder */}
-          <Route
-            path="orders"
-            element={
-              <div style={{ padding: 24, textAlign: "center" }}>
-                📦 No recent orders
-              </div>
-            }
-          />
-
-          {/* Fallback Route */}
+          {/* 404 fallback */}
           <Route
             path="*"
             element={
@@ -130,7 +145,6 @@ export default function MobileApp() {
           />
         </Routes>
 
-        {/* Bottom Navigation */}
         <MobileFooter />
       </div>
     </div>
