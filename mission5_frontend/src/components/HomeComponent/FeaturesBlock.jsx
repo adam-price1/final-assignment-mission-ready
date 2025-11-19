@@ -1,4 +1,3 @@
-// components/FeatureBlock.jsx
 import styles from "./FeaturesBlock.module.css";
 
 export default function FeatureBlock({
