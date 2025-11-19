@@ -1,0 +1,175 @@
+/* ========== STATUS BAR ========== */
+.statusBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* no space between time + icons */
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px; /* small gap between time + icons */
+}
+
+.time {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.statusIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px; 
+  margin-left:200px;
+  
+ 
+
+}
+
+.lev {
+  height: 34px; /* adjust for the look */
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: #13124f;
+}
+
+.stepBody {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0 0 4px;
+  color: #4b4b64;
+}
+
+.stepLink {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: #1b2bbf;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-align: left;
+}
+.screen {
+  max-width: 390px;      /* iPhone-ish width */
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  padding: 16px;
+  background: #fff;
+}
+
+/* ============================
+   STEPS SECTION (numbers + text)
+   ============================ */
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* BLUE CIRCLE WITH NUMBER */
+.stepNum {
+  width: 28px;
+  height: 28px;
+  background: #1b2bbf;
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* TEXT BLOCK TO THE RIGHT */
+.stepText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: #13124f;
+}
+
+.stepBody {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  color: #4b4b64;
+}
+
+.stepLink {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: #1b2bbf;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: underline;
+  text-align: left;
+}
+
+.topBar{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+
+}
+
+.backBtn{
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.backIcon{
+  width: 20px;
+  height: 20px;
+  transform:rotate(90deg);
+}
+
+.topIcon{
+  width: 22px;
+  height: 22px;
+}
+
+.topText{
+font-size: 18px;
+font-weight: 600;
+color:#1a1a7e;
+}
+
+.topBarWrapper {
+  border-bottom: 1px solid #eee; /* light grey line */
+}
+
+.cardRow{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 16px;
+  padding: 0 16px 24px;
+  overflow-x: auto;
+
+}
+
+
+

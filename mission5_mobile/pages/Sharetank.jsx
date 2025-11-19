@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./SharetankApp.module.css";
+import {useNavigate} from "react-router-dom";
 
 export default function Sharetank() {
+  const navigate =useNavigate();
+
   return (
     <div className={styles.screen}>
       <div className={styles.phone}>
@@ -143,20 +146,19 @@ export default function Sharetank() {
 
           <div className={styles.divider} />
 
-          <div className={styles.settingsRow}>
-            <img 
-            src ="/image/icons/zicons/trailer.svg"
-            alt="trailer"
-            className={styles.settingsIcon}
-            />
-            <div>
-              <div className={styles.settingsHow}>How it works</div>
-              <div className={styles.settingsSubtitlehow}>
-                Help about Sharetank.
-              </div>
-            </div>
-            <span className={styles.chevron}>›</span>
-          </div>
+          <div
+  className={styles.settingsRow}
+  onClick={() => navigate("/howitworks")}
+  style={{ cursor: "pointer" }}
+>
+  <img src="/image/icons/zicons/trailer.svg" alt="trailer" className={styles.settingsIcon} />
+  <div>
+    <div className={styles.settingsHow}>How it works</div>
+    <div className={styles.settingsSubtitlehow}>Help about Sharetank.</div>
+  </div>
+  <span className={styles.chevron}>›</span>
+</div>
+
 
           <div className={styles.divider} />
 
