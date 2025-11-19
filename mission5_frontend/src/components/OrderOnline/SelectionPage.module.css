@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2.8rem;
-  margin: 180px 150px 12px;
+  gap: 3.8rem;
+  margin: 110px 150px 80px;
 }
 .selectDrinkTitle img {
   width: auto;
@@ -11,9 +11,8 @@
 }
 
 .selectDrinkTitle h1 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 36px;
-  letter-spacing: 6px;
+  font-size: 46px;
+  /* letter-spacing: 6px; */
   color: #f26522;
 }
 .drinkSelection {

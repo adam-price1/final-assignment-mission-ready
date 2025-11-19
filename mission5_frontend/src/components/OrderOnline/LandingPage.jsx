@@ -96,7 +96,7 @@ function LandingPage() {
         </button>
       </div>
 
-      <SelectionPage />
+      <SelectionPage value={chooseDrink} />
     </>
   );
 }
