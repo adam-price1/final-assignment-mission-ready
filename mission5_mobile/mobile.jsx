@@ -39,10 +39,18 @@ function MobileFooter() {
   return (
     <footer className={styles.mobileFooter}>
       <div className={styles.footerIcons}>
-        <Link to="/mobile/home" className={styles.footerBtn}>🏠 Home</Link>
-        <Link to="/mobile/map" className={styles.footerBtn}>🗺️ Map</Link>
-        <Link to="/mobile/orders" className={styles.footerBtn}>🛍️ Orders</Link>
-        <Link to="/mobile/more" className={styles.footerBtn}>⚙️ More</Link>
+        <Link to="/mobile/home" className={styles.footerBtn}>
+          🏠 Home
+        </Link>
+        <Link to="/mobile/map" className={styles.footerBtn}>
+          🗺️ Map
+        </Link>
+        <Link to="/mobile/orders" className={styles.footerBtn}>
+          🛍️ Orders
+        </Link>
+        <Link to="/mobile/more" className={styles.footerBtn}>
+          ⚙️ More
+        </Link>
       </div>
     </footer>
   );
@@ -53,7 +61,6 @@ export default function MobileApp() {
     <div className={styles.screenBg}>
       <div className={styles.card}>
         <Routes>
-
           {/* Onboarding Flow */}
           <Route index element={<Onboarding1 />} />
           <Route path="onboarding2" element={<Onboarding2 />} />
