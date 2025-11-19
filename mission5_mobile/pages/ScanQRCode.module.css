@@ -1,0 +1,52 @@
+/* ScanQRCode.module.css */
+
+.screen {
+  padding: 20px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.backIcon {
+  width: 20px;
+  cursor: pointer;
+}
+
+.headerText {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #ececf3;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c54;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.qrImage {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  display: block;
+}

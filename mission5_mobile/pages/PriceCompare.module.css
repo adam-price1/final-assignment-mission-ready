@@ -1,0 +1,76 @@
+/* PriceCompare.module.css */
+
+.page {
+  padding: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #4b3bbd;
+  margin-bottom: 16px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.card {
+  background: linear-gradient(180deg, #0a0f47, #3a288e);
+  border-radius: 12px;
+  padding: 14px;
+  color: white;
+}
+
+.stationName {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.address {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.priceTag {
+  background: #2ecc71;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.topUpBtn {
+  background: #ff7f00;
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}

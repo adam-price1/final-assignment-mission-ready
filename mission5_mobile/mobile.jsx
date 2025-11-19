@@ -1,6 +1,6 @@
 // mobile.jsx
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import styles from "./MobileOverlay.module.css";
 
 /* --- IMPORT ALL MOBILE PAGES --- */
@@ -34,36 +34,121 @@ import SignUp2 from "./pages/SignUp2";
 import ThankYouPage from "./pages/ThankYouPage";
 import TopUpOverlay from "./pages/TopUpOverlay";
 import VegetarianFoodPage from "./pages/VegetarianFoodPage";
+
 import HowItWorksPage from "./pages/HowItWorksPage";
 
 
-/* --- FOOTER (bottom tabs) --- */
+import PaymentLoading from "./pages/PaymentLoading";
+
+
+/* --- FOOTER COMPONENT --- */
 function MobileFooter() {
   return (
     <footer className={styles.mobileFooter}>
       <div className={styles.footerIcons}>
-        <Link to="/mobile/home" className={styles.footerBtn}>🏠 Home</Link>
-        <Link to="/mobile/map" className={styles.footerBtn}>🗺️ Map</Link>
-        <Link to="/mobile/orders" className={styles.footerBtn}>🛍️ Orders</Link>
-        <Link to="/mobile/more" className={styles.footerBtn}>⚙️ More</Link>
+        <Link to="/mobile/home" className={styles.footerBtn}>
+          <img
+            src="/image/icons/zicons/house.svg"
+            alt="Home"
+            className={styles.tabIconImg}
+          />
+          <span className={styles.footerLabel}>Home</span>
+        </Link>
+
+        <Link to="/mobile/scan" className={styles.footerBtn}>
+          <img
+            src="/image/icons/qrcode.svg"
+            alt="QR Code"
+            className={styles.tabIconImg}
+          />
+          <span className={styles.footerLabel}>QR Code</span>
+        </Link>
+
+        <Link to="/mobile/sharetank" className={styles.footerBtn}>
+          <img
+            src="/image/icons/zicons/appfueltank.svg"
+            alt="ShareTank"
+            className={styles.tabIconImg}
+          />
+          <span className={styles.footerLabel}>ShareTank</span>
+        </Link>
+
+        <Link to="/mobile/more" className={styles.footerBtn}>
+          <img
+            src="/image/icons/zicons/hamburger.svg"
+            alt="More"
+            className={styles.tabIconImg}
+          />
+          <span className={styles.footerLabel}>More</span>
+        </Link>
       </div>
     </footer>
   );
 }
 
 export default function MobileApp() {
+  const location = useLocation();
+
+  /* --------------------------------------------------
+      ROUTES WHERE FOOTER MUST BE HIDDEN
+  --------------------------------------------------- */
+  const hiddenFooterRoutes = [
+    // Onboarding
+    "/mobile",
+    "/mobile/onboarding1",
+    "/mobile/onboarding2",
+    "/mobile/onboarding3",
+    "/mobile/onboarding4",
+
+    // Signup
+    "/mobile/signup1",
+    "/mobile/signup2",
+
+    // Add / Payment flow
+    "/mobile/add-card",
+    "/mobile/add-payment", // if this route exists
+    "/mobile/card-success",
+    "/mobile/loading",
+    "/mobile/order-confirm",
+    "/mobile/declined",
+
+    // Vehicle
+    "/mobile/add-vehicle",
+    "/mobile/pay-by-plate",
+    "/mobile/how-it-works", // if separate page exists
+
+    // Maps
+    "/mobile/map",
+    "/mobile/map-zoom",
+    "/mobile/map-kingsway",
+
+    // Price Compare
+    "/mobile/price-compare",
+
+    // QR Scan
+    "/mobile/scan",
+
+    // More Menu page (full screen)
+    "/mobile/more",
+
+    // TopUp pop up
+    "/mobile/topup",
+  ];
+
+  const hideFooter = hiddenFooterRoutes.includes(location.pathname);
+
   return (
     <div className={styles.screenBg}>
-      <div className={styles.card}>
+      <div className={`${styles.card} ${hideFooter ? styles.noFooter : ""}`}>
         <Routes>
-
-          {/* Onboarding Flow */}
+          {/* Onboarding */}
           <Route index element={<Onboarding1 />} />
+          <Route path="onboarding1" element={<Onboarding1 />} />
           <Route path="onboarding2" element={<Onboarding2 />} />
           <Route path="onboarding3" element={<Onboarding3 />} />
           <Route path="onboarding4" element={<Onboarding4 />} />
 
-          {/* Main Screens */}
+          {/* Main */}
           <Route path="home" element={<HomePage />} />
           <Route path="food" element={<FoodPage />} />
           <Route path="food/:id" element={<FoodDetails />} />
@@ -76,14 +161,12 @@ export default function MobileApp() {
 
           <Route path="order-food-home" element={<OrderFoodHome />} />
 
-          {/* Map Screens */}
+          {/* Maps */}
           <Route path="map" element={<Map1 />} />
           <Route path="map-zoom" element={<MapZoom />} />
           <Route path="map-kingsway" element={<KingswayMap />} />
 
-
-
-          {/* Payments / Cards */}
+          {/* Payments */}
           <Route path="add-card" element={<AddCardDetails />} />
           <Route path="card-success" element={<CardSuccess />} />
           <Route path="add-vehicle" element={<AddVehicle />} />
@@ -91,6 +174,7 @@ export default function MobileApp() {
           <Route path="order-confirm" element={<ConfirmOrderPage />} />
           <Route path="declined" element={<DeclinedOverlayMobile />} />
           <Route path="topup" element={<TopUpOverlay />} />
+          <Route path="loading" element={<PaymentLoading />} />
 
           {/* QR + Sharetank */}
           <Route path="scan" element={<ScanQRCode />} />
@@ -105,17 +189,7 @@ export default function MobileApp() {
           <Route path="thanks" element={<ThankYouPage />} />
           <Route path="veg-food" element={<VegetarianFoodPage />} />
 
-          {/* Orders Placeholder */}
-          <Route
-            path="orders"
-            element={
-              <div style={{ padding: 24, textAlign: "center" }}>
-                📦 No recent orders
-              </div>
-            }
-          />
-
-          {/* Fallback Route */}
+          {/* 404 */}
           <Route
             path="*"
             element={
@@ -126,8 +200,8 @@ export default function MobileApp() {
           />
         </Routes>
 
-        {/* Bottom Navigation */}
-        <MobileFooter />
+        {/* footer only shows if not hidden */}
+        {!hideFooter && <MobileFooter />}
       </div>
     </div>
   );

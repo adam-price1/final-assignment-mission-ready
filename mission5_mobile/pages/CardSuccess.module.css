@@ -1,0 +1,44 @@
+/* CardSuccess.module.css */
+
+.container {
+  padding: 20px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.statusBar {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  display: block;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #2c2c54;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
