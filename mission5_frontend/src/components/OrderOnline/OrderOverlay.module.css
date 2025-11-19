@@ -1,0 +1,160 @@
+.modalContainer {
+  width: 920px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------- HEADER ---------------- */
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.productImage {
+  width: 120px;
+}
+
+.textAndControls {
+  flex: 1;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.description {
+  max-width: 420px;
+  color: #555;
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+/* ---------------- SIZE BUTTONS ---------------- */
+
+.sizeRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sizeBtn {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  min-width: 120px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.sizeBtn span {
+  font-weight: 600;
+  display: block;
+}
+
+.sizeBtn small {
+  font-size: 12px;
+  color: #444;
+}
+
+.active {
+  border-color: #f28b30;
+  background: #fff6ee;
+}
+
+/* ---------------- QUANTITY ---------------- */
+
+.qtyRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qtyBtn {
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.qtyNumber {
+  font-size: 16px;
+  width: 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.editBtn,
+.deleteBtn {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* ---------------- DIVIDER ---------------- */
+
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 28px 0;
+}
+
+/* ---------------- OPTIONS GRID ---------------- */
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.optionsGrid h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.optionsGrid label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.extra {
+  font-weight: 500;
+  color: #888;
+}
+
+/* ---------------- FOOTER BUTTONS ---------------- */
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.cancel {
+  border: 1px solid #2f3da1;
+  padding: 10px 26px;
+  background: transparent;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.add {
+  background: #2f3da1;
+  color: #fff;
+  padding: 10px 26px;
+  border-radius: 22px;
+  cursor: pointer;
+}

@@ -1,35 +1,39 @@
 import React from "react";
 import styles from "./HowItWorksCard.module.css";
 
-export default function HowItWorksCard() {
-return (
+export default function HowItWorksCard({ title, body, showIllustration = false }) {
+  return (
     <div className={styles.card}>
+      <div className={styles.text}>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.description}>{body}</p>
+      </div>
 
-        {/* left illustration */}
+      {/* only the first card will render this */}
+      {showIllustration && (
         <div className={styles.illustration}>
-            {/* outer rings */}
-            <div className={`${styles.ring} ${styles.ringOuter}`}/>
-            <div className={`${styles.ring} ${styles.ringSecond}`}/>
-            <div className={`${styles.ring} ${styles.ringThird}`}/>
-            <div className={`${styles.ring} ${styles.ringFourth}`}/>
+          <div className={`${styles.ring} ${styles.ringOuter}`} />
+          <div className={`${styles.ring} ${styles.ringSecond}`} />
+          <div className={`${styles.ring} ${styles.ringThird}`} />
+          <div className={`${styles.ring} ${styles.ringFourth}`} />
 
-            {/* white circle with water drop */}
-            <div className={styles.iconCircle}>
-             <img
-             src="/image/icons/zicons/teardrop.svg"
-             alt="water drop"
-             className={styles.teardrop} 
-             />  
-            </div>
+          <div className={styles.iconCircle}>
+            <div className={styles.centerOrange}></div>
+
+            <img
+              src="/image/icons/zicons/bluewaterdrop.svg"
+              alt="Water Drop"
+              className={styles.pin}
+            />
+
+            <img
+              src="/image/icons/zicons/mask.svg"
+              alt="Person"
+              className={styles.mask}
+            />
+          </div>
         </div>
-
-        {/* right side */}
-        <div className={styles.text}>
-            <h3 className={styles.title}>Buy fuel now, use it later</h3>
-            <p className= {styles.body}>lock the pump price within 30km of your location and buy it to use later!</p>
-
-        </div>
+      )}
     </div>
-
-);
+  );
 }

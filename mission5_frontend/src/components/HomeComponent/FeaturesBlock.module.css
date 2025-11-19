@@ -1,7 +1,7 @@
 :root {
   --brand: #ff7a00;
   --ink: #1a1a1a;
-  --muted: #313a74; /* your dark blue-ish text */
+  --muted: #313a74;
   --radius: 999px;
   --gap: 3rem;
 }
