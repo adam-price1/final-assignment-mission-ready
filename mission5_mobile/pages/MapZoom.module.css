@@ -1,13 +1,17 @@
 .stationcard{
-    position: relative;
-    width:360px;
-    height: 900px;
-    background:linear-gradient(180deg, #ff7e00, #ffd400); 
-    padding:20px;
-    border-radius:16px;
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  width: 360px;
+  /* let the height grow with content */
+  height: auto;          /* 👈 important */
+  background: linear-gradient(180deg, #ff7e00, #ffd400);
+  padding: 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 24px 24px 0 0;  /* nice rounded top */
+  margin: 0 auto;                /* center the card */
 }
+
+   
 
 .mappin{
     position:absolute;
@@ -68,6 +72,7 @@ font-size: 13px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 10px;
 }
 
 .stationbtnTitle{
@@ -101,4 +106,41 @@ font-size: 13px;
 .stationphoneIcon{
     width: 18px;
     height: 18px;
+}
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* --- MAP --- */
+.mapContainer {
+  width: 100%;
+  height: 280px; /* adjust to match your design */
+  position: relative;
+  overflow: hidden;
+}
+
+.mapImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop nicely */
+}
+
+.pin {
+  position: absolute;
+  top: 110px;     /* adjust to move the Z marker */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+}
+
+/* --- BOTTOM PANEL (orange) --- */
+.panel {
+  margin-top: -20px; /* slight overlap like your design */
+  background: linear-gradient(180deg, #ff7a00, #ffd100);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 20px;
+  min-height: 700px;
 }

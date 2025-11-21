@@ -48,7 +48,7 @@ function KingswayMap() {
       {/* ---- MAP AREA ---- */}
       <div className={styles.mapWrapper}>
         <img
-          src="/image/icons/zicons/mapPapakura.png"  // your Kingsway map image
+          src="/image/icons/zicons/clevedonmap.png"  // your Kingsway map image
           alt="Kingsway Map"
           className={styles.mapImage}
         />

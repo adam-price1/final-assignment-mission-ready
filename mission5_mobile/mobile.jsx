@@ -40,12 +40,12 @@ import HowItWorksPage from "./pages/HowItWorksPage";
 
 import PaymentLoading from "./pages/PaymentLoading";
 
- HEAD
+
 /* FOOTER */
 
 
 /* --- FOOTER COMPONENT --- */
- bef84af1ecff9cc0cd69589cfd7d87003047596e
+//  bef84af1ecff9cc0cd69589cfd7d87003047596e
 function MobileFooter() {
   return (
     <footer className={styles.mobileFooter}>
