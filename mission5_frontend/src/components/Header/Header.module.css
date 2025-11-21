@@ -77,23 +77,6 @@
   color: #ff8a00;
 }
 
-/* Right Section */
-/* .right {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-}
-
-.icon {
-  font-size: 1.3rem;
-  color: #2c2a29;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-.icon:hover {
-  color: #ff8a00;
-} */
-
 /* Purple Login button */
 .loginBtn {
   background: linear-gradient(to right, #1e196b, #3129ab);

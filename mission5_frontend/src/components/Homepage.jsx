@@ -1,5 +1,4 @@
-import React from "react";
-import FeatureBlock from "./HomeComponent/FeaturesBlock";
+import FeatureBlock from "./homeComponent/FeaturesBlock.jsx";
 // image import
 import homeBanner from "/image/banners/bannerHomePage.png";
 import heroImage from "/image/homepageHeroImage.png";
