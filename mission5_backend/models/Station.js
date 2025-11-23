@@ -6,10 +6,10 @@ const HoursSchema = new mongoose.Schema({
 });
 
 const StationSchema = new mongoose.Schema({
-    name:{type:string, required: true},
+    name:{type:String, required: true},
     address:String,
     lat:Number,
-    lng:number,
+    lng:Number,
     phone:Number,
     hours:[HoursSchema],
     services:[String],     

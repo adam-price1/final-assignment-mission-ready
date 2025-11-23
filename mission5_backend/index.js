@@ -13,7 +13,7 @@ import mongoSanitize from "express-mongo-sanitize";
 
 // 👉 margaret new routers
 import stationsRouter from "./routes/stations.js";
-import vehiclesRouter from "./routes/vehicles.js";
+import vehiclesRouter from "./routes/vehicle.js";
 
 const app = express();
 const limiter = rateLimit({
