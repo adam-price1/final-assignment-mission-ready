@@ -8,32 +8,44 @@ import mongoose from "mongoose";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
 
-// 👉 import any  team routers here
-// import itemsRouter from "./routes/items.js";  // example
+// 👉 team routers here (example)
+// import itemsRouter from "./routes/items.js";
 
-// 👉 margaret new routers
+// 👉 Margaret’s new routers
 import stationsRouter from "./routes/stations.js";
 import vehiclesRouter from "./routes/vehicle.js";
+import runSeed from "./seed.js";
 
 const app = express();
+
+/* ---------- Security & parsing ---------- */
+
+// rate limiter
 const limiter = rateLimit({
-windowMS: 15 * 60 * 1000,//15 minutes
-max:100, //limit each ip to 100 request per window
-message: "too many requests, please try again later",
+  windowMs: 15 * 60 * 1000, // 15 minutes  (camelCase: windowMs)
+  max: 100,                 // limit each IP to 100 requests per window
+  message: "Too many requests, please try again later",
 });
 app.use(limiter);
+
+// security headers
 app.use(helmet());
+
+// sanitize Mongo inputs
 app.use(mongoSanitize());
-// ---------- Middleware ----------
+
+// CORS
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN || "http://localhost:5173",
   })
 );
 
+// JSON body parsing
 app.use(express.json());
 
-// ---------- MongoDB connection ----------
+/* ---------- MongoDB connection + seeding + server start ---------- */
+
 const mongoUri = process.env.MONGODB_URI;
 
 if (!mongoUri) {
@@ -41,30 +53,41 @@ if (!mongoUri) {
   process.exit(1);
 }
 
-mongoose
-  .connect(mongoUri)
-  .then(() => console.log("✅ MongoDB connected:", mongoUri))
-  .catch((err) => {
-    console.error("❌ MongoDB connection error:", err);
+async function start() {
+  try {
+    // connect to Mongo
+    await mongoose.connect(mongoUri);
+    console.log("✅ MongoDB connected:", mongoUri);
+
+    // optional seeding
+    if (process.env.SEED === "true") {
+      console.log("🌱 Running seed script...");
+      await runSeed();
+      console.log("🌱 Seed complete.");
+    }
+
+    // ---------- Routes ----------
+    // team routes:
+    // app.use("/api/items", itemsRouter);
+
+    // Margaret Sharetank routes:
+    app.use("/api/stations", stationsRouter);
+    app.use("/api/vehicles", vehiclesRouter);
+
+    // health-check
+    app.get("/", (req, res) => {
+      res.json({ status: "ok" });
+    });
+
+    // start server
+    const PORT = process.env.PORT || 4000;
+    app.listen(PORT, () => {
+      console.log(`🚀 Server listening on http://localhost:${PORT}`);
+    });
+  } catch (err) {
+    console.error("❌ Startup error:", err);
     process.exit(1);
-  });
+  }
+}
 
-// ---------- Routes ----------
-
-// 👇  team’s existing routes here
-// app.use("/api/items", itemsRouter);   // example
-
-// 👇 margaret Sharetank routes
-app.use("/api/stations", stationsRouter);
-app.use("/api/vehicles", vehiclesRouter);
-
-// Simple health-check route
-app.get("/", (req, res) => {
-  res.json({ status: "ok" });
-});
-
-// ---------- Start server ----------
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server listening on http://localhost:${PORT}`);
-});
+start();
