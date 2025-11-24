@@ -1,11 +1,13 @@
 import Station from "./models/Station.js";
 import Vehicle from "./models/Vehicle.js";
+import Sharetank from "./models/Sharetank.js";
 
 export default async function runSeed() {
-  console.log("🌱 Clearing old data...");
+  console.log(" Clearing old data...");
 
   await Station.deleteMany();
   await Vehicle.deleteMany();
+  await Sharetank.deleteMany();
 
   console.log(" Inserting stations...");
   await Station.insertMany([
@@ -53,5 +55,23 @@ export default async function runSeed() {
     }
   ]);
 
-  console.log(" Seed complete!");
+  console.log(" Inserting Sharetank...");
+  await Sharetank.create({
+    tankKey: "demo-tank-1",
+    ownerUserId: "demo-user-1",
+    litres: 115,
+    maxLitres: 225,
+    members: [
+      {
+        name: "Alex",
+        avatarUrl: "/image/icons/sharetank2/firstmember.jpg"
+      },
+      {
+        name: "Sarah",
+        avatarUrl: "/image/icons/sharetank2/secondmember.jpg"
+      }
+    ]
+  });
+
+  console.log("🌱 Seed complete!");
 }

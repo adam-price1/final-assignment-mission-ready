@@ -1,58 +1,108 @@
-/* MoreMenu.module.css */
-
-.screen {
-  padding: 20px;
+.container {
+  background-color: #fff;
+  min-height: 100vh;
   font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
+/* --- Header --- */
 .header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  padding: 5px 20px;
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3.9px rgba(243, 111, 33, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: 12px;
 }
 
-.backIcon {
+.backBtn img {
   width: 20px;
-  cursor: pointer;
+  height: 20px;
 }
 
-.title {
-  font-size: 18px;
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menuIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.titleGroup h2 {
+  font-size: 16px;
   font-weight: 600;
-  color: #1f2147;
+  color: #1e196b;
+  margin: 0;
 }
 
-.sectionTitle {
+/* --- Content --- */
+.content {
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* --- Section --- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section h4 {
   font-size: 14px;
   font-weight: 600;
-  margin: 20px 0 10px;
-  color: #4c4c61;
+  text-align: left;
+  color: #1e196b;
+  margin: 0 0 6px 0; /* flush left like figma */
+  text-transform: capitalize;
+  letter-spacing: -0.02em;
 }
 
-.row {
+/* --- Items --- */
+.item {
   display: flex;
   justify-content: space-between;
+  width: 95%;
   align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px solid #ececf3;
+  padding: 8px 0;
+  border-bottom: 1px solid #eaeaea;
 }
 
-.rowLeft {
+.left {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.rowIcon {
-  width: 20px;
+.icon {
+  width: 18px;
+  height: 18px;
+  margin-left: 15px;
 }
 
-.rowLabel {
-  font-size: 14px;
-  color: #2c2c54;
+.item span {
+  font-size: 13px;
+  color: #1a1a1a;
 }
 
-.arrowIcon {
-  width: 14px;
+.arrow {
+  width: 12px;
+  height: 12px;
+  opacity: 0.6;
+}
+
+.item:hover {
+  background-color: #fafafa;
+  border-radius: 4px;
 }

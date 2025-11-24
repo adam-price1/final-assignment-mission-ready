@@ -38,7 +38,7 @@
 }
 
 .column h4 {
-  color: #231f20; /* Z dark text */
+  color: #231f20;
   font-weight: 700;
   margin-bottom: 0.6rem;
   font-size: 1rem;
@@ -59,29 +59,24 @@
 }
 
 .column li:hover {
-  color: #ff8a00; /* Z orange hover */
+  color: #ff8a00;
 }
 
-/* Contact button top-right */
-.contactBtn {
-  background-color: #ff8a00;
-  color: #fff;
-  font-weight: 600;
+.contactBtnImg {
+  background: none;
   border: none;
-  border-radius: 25px;
-  padding: 0.7rem 1.4rem;
+  padding: 0;
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  bottom: 230px;
+  right: -3%;
   cursor: pointer;
-  transition: all 0.25s ease;
 }
 
-.contactBtn:hover {
-  background-color: #e67800;
+.contactBtnImg img {
+  height: 33px;
+  width: auto;
 }
 
-/* Responsive layout */
 @media (max-width: 900px) {
   .inner {
     flex-direction: column;
@@ -93,7 +88,7 @@
     text-align: center;
   }
 
-  .contactBtn {
+  .contactBtnImg {
     position: static;
     margin-top: 1.5rem;
   }
