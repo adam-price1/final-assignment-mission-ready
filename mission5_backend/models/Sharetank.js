@@ -12,8 +12,7 @@ const SharetankSchema = new mongoose.Schema({
   tankKey: { type: String, required: true, unique: true }, // e.g. "demo-tank-1"
   ownerUserId: String,
   litres: Number,
-  maxLitres: Number,
-  maxLitres: Number,
+   maxLitres: Number,
   maxMembers: { type: Number, default: 5 },
   members: [MemberSchema],
 });

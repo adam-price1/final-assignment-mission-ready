@@ -7,12 +7,13 @@ const HoursSchema = new mongoose.Schema({
 
 const StationSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  address: String,
-  lat: Number,
-  lng: Number,
-  phone: Number,
-  hours: [HoursSchema],
-  services: [String],
+  address: { type: String, required: true },
+  phone: { type: String, required: true },
+  hours: { type: Array, required: true },
+  services: { type: [String], required: true },
+  lat: { type: Number, required: true },
+  lng: { type: Number, required: true }
 });
+
 
 export default mongoose.model("Station", StationSchema);

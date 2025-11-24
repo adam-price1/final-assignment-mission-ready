@@ -57,6 +57,7 @@ export default async function runSeed() {
 
   console.log(" Inserting Sharetank...");
   await Sharetank.create({
+    tankKey: "demo-tank-1",
     ownerUserId: "demo-user-1",
     litres: 115,
     maxLitres: 225,
