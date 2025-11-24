@@ -1,52 +1,130 @@
-/* ScanQRCode.module.css */
-
-.screen {
-  padding: 20px;
-  text-align: center;
+.container {
+  background-color: #ffffff;
+  min-height: 100vh;
   font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
-.headerRow {
+/* Header */
+.header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  padding: 8px 20px;
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3.9px rgba(243, 111, 33, 0.1);
+  gap: 10px;
 }
 
 .backIcon {
   width: 20px;
-  cursor: pointer;
+  height: 20px;
 }
 
-.headerText {
+.menuIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.titleGroup h2 {
   font-size: 16px;
   font-weight: 600;
+  color: #1e196b;
+  margin: 0;
 }
 
-.card {
-  margin-top: 20px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid #ececf3;
+/* Main layout */
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
 }
 
-.title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #2c2c54;
-  margin-bottom: 12px;
+/* Card Section */
+.cardWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.description {
-  font-size: 13px;
-  color: #6b7280;
-  margin-bottom: 16px;
-}
-
-.qrImage {
-  width: 180px;
-  height: 180px;
+/* Top orange section */
+.topCard {
+  width: 257px;
+  height: 190px;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(90deg, #f36f21, #ffd400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
   margin: 0 auto;
-  display: block;
+  position: relative;
+}
+
+.topCard h3 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 10px;
+}
+
+.topCard p {
+  width: 80%;
+  color: #1a1a1a;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.4;
+  margin: 5px 0 0 0;
+}
+
+.dashedLine {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 237px;
+  border-bottom: 1px dashed #656565;
+  z-index: 3;
+}
+
+/* Bottom white card */
+.bottomCard {
+  position: relative;
+  width: 257px;
+  height: 235px;
+  background: #ffffff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* QR Code perfectly centered */
+.qrCode {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 148px;
+  height: 148px;
+  border-radius: 3px;
 }

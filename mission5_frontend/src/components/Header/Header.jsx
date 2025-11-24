@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // added import
 import styles from "./Header.module.css";
 import zLogo from "/image/logo.png";
 
@@ -6,7 +7,11 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.left}>
-        <img src={zLogo} alt="Z Energy logo" className={styles.logo} />
+        {/* logo now routes home */}
+        <Link to="/">
+          <img src={zLogo} alt="Z Energy logo" className={styles.logo} />
+        </Link>
+
         <button className={styles.personalBtn}>For personal</button>
       </div>
 

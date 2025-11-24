@@ -1,64 +1,112 @@
-/* AddCardDetails.module.css */
-
+/* PAGE */
 .container {
-  padding: 20px;
-  font-family: "Roboto", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
 }
 
-.statusBar {
-  font-size: 14px;
-  margin-bottom: 15px;
+/* HEADER */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  box-shadow: 0px 1px 3.9px rgba(243, 111, 33, 0.1);
 }
 
-.title {
-  font-size: 20px;
+.backIcon {
+  width: 16px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.headerCardIcon {
+  width: 18px;
+  height: 12px;
+  margin-bottom: 1px;
+  margin-left: 10px;
+}
+
+.headerText {
+  font-family: Roboto;
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 20px;
+  color: #1e196b;
+  margin-left: 5px;
 }
 
-.formGroup {
-  margin-bottom: 16px;
+/* FORM WRAPPER */
+.formWrapper {
+  width: 288px;
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
+/* LABEL */
 .label {
-  font-size: 13px;
-  font-weight: 500;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e196b;
+  margin-right: 73%;
   margin-bottom: 6px;
-  display: block;
+}
+
+/* INPUT BOX */
+.inputBox {
+  width: 288px;
+  height: 28px;
+  background: #ffffff;
+  margin-left: 5px;
+  border-radius: 3px;
+  border: 1px solid #ededed;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px;
+  box-sizing: border-box;
+
+  box-shadow: 2px 2px 4px rgba(243, 111, 33, 0.1);
 }
 
 .input {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #dcdcdc;
-  font-size: 15px;
-}
-
-.cardIcon {
-  width: 40px;
-  height: 24px;
-  margin-left: auto;
-}
-
-.infoRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.btn {
-  width: 100%;
-  background: #2c2c54;
-  color: #fff;
-  padding: 12px;
   border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  margin-top: 20px;
-  cursor: pointer;
+  outline: none;
+  font-size: 12px;
+  color: #ababab;
 }
 
-.btn:hover {
-  background: #25254b;
+.input::placeholder {
+  color: #ababab;
+  font-size: 12px;
+}
+
+.inputIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* PAY BUTTON */
+.payButton {
+  margin: 30px auto;
+  width: 97px;
+  height: 26px;
+
+  background: linear-gradient(90deg, #3129ab 0%, #1e196b 78%);
+  color: white;
+
+  border: none;
+  border-radius: 30px;
+
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 12px;
+
+  cursor: pointer;
 }

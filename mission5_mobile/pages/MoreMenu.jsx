@@ -1,40 +1,80 @@
-// pages/MoreMenu.jsx
 import React from "react";
 import styles from "./MoreMenu.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function MoreMenu() {
+  const navigate = useNavigate();
+
+  const sections = [
+    {
+      title: "My account",
+      items: [
+        { icon: "/image/icons/more/user.png", label: "Personal information" },
+        { icon: "/image/icons/more/bell.png", label: "Notification settings" },
+        { icon: "/image/icons/more/star.png", label: "Loyalty card" },
+        { icon: "/image/icons/more/activity.png", label: "Recent activity" },
+        { icon: "/image/icons/more/ev.png", label: "EV charge tag" },
+      ],
+    },
+    {
+      title: "Promotions",
+      items: [
+        { icon: "/image/icons/more/ticket.png", label: "My vouchers" },
+        { icon: "/image/icons/more/gift.png", label: "Invite friends" },
+      ],
+    },
+    {
+      title: "Help & Support",
+      items: [
+        { icon: "/image/icons/more/map.png", label: "Find a Z" },
+        { icon: "/image/icons/more/legal.png", label: "Legal" },
+        { icon: "/image/icons/more/feedback.png", label: "Give Feedback" },
+        { icon: "/image/icons/more/contact.png", label: "Contact us" },
+      ],
+    },
+  ];
+
   return (
     <div className={styles.container}>
-      <div className={styles.statusBar}>9:41</div>
+      {/* Header */}
+      <header className={styles.header}>
+        <button onClick={() => navigate(-1)} className={styles.backBtn}>
+          <img src="/image/icons/more/back.png" alt="Back" />
+        </button>
+        <div className={styles.titleGroup}>
+          <img
+            src="/image/icons/more/menu.png"
+            alt="Menu"
+            className={styles.menuIcon}
+          />
+          <h2>More</h2>
+        </div>
+      </header>
 
-      <div className={styles.header}>
-        <span className={styles.back}>←</span>
-        <span className={styles.title}>More</span>
-        <span className={styles.empty}></span>
-      </div>
-
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>My account</h3>
-
-        <div className={styles.row}>Personal information ›</div>
-        <div className={styles.row}>Notification settings ›</div>
-        <div className={styles.row}>Loyalty card ›</div>
-        <div className={styles.row}>Recent activity ›</div>
-        <div className={styles.row}>EV charge tag ›</div>
-      </div>
-
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Promotions</h3>
-        <div className={styles.row}>My vouchers ›</div>
-        <div className={styles.row}>Invite friends ›</div>
-      </div>
-
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Help & Support</h3>
-        <div className={styles.row}>Find a Z ›</div>
-        <div className={styles.row}>Legal ›</div>
-        <div className={styles.row}>Give Feedback ›</div>
-        <div className={styles.row}>Contact us ›</div>
+      {/* Content */}
+      <div className={styles.content}>
+        {sections.map((section, i) => (
+          <div key={i} className={styles.section}>
+            <h4>{section.title}</h4>
+            {section.items.map((item, idx) => (
+              <div key={idx} className={styles.item}>
+                <div className={styles.left}>
+                  <img
+                    src={item.icon}
+                    alt={item.label}
+                    className={styles.icon}
+                  />
+                  <span>{item.label}</span>
+                </div>
+                <img
+                  src="/image/icons/more/arrow-right.png"
+                  alt=">"
+                  className={styles.arrow}
+                />
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
