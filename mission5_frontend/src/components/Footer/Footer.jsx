@@ -1,13 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
-import zLogo from "/image/logo.png"; // ← place your Z logo in /src/assets
+import zLogo from "/image/logo.png";
+import contactImg from "/image/icons/more/contactus.png";
 
 function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
+        {/* Logo now links to home */}
         <div className={styles.left}>
-          <img src={zLogo} alt="Z Energy logo" className={styles.logo} />
+          <Link to="/">
+            <img src={zLogo} alt="Z Energy logo" className={styles.logo} />
+          </Link>
         </div>
 
         <div className={styles.links}>
@@ -43,7 +48,9 @@ function Footer() {
           </div>
         </div>
 
-        <button className={styles.contactBtn}>Contact us ▸</button>
+        <button className={styles.contactBtnImg}>
+          <img src={contactImg} alt="Contact us" />
+        </button>
       </div>
     </footer>
   );
