@@ -148,6 +148,13 @@ export default function MobileApp() {
           <Route path="more" element={<MoreMenu />} />
           <Route path="sharetank" element={<Sharetank />} />
           <Route path="howitworks" element={<HowItWorksPage />} />
+          <Route path="add-vehicle" element={<AddVehicle />} />
+
+          {/* Signup */}
+          <Route path="signup1" element={<SignUp1 />} />
+          <Route path="signup2" element={<SignUp2 />} />
+
+          {/* Extras */}
           <Route path="veg-food" element={<VegetarianFoodPage />} />
           <Route path="thanks" element={<ThankYouPage />} />
           <Route path="price-compare" element={<PriceCompare />} />

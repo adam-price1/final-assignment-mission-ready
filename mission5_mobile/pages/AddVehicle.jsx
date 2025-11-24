@@ -7,14 +7,26 @@ export default function AddVehicle() {
   const [selectedFuel, setSelectedFuel] = useState(null);
   const [confirmDetails, setConfirmDetails] = useState(false);
 
-  const FUEL_TYPES = [
-    { id: 1, label: "Z 91", small: "Z 91" },
-    { id: 2, label: "Z X 95", small: "Z X 95" },
-    { id: 3, label: "Z D", small: "Z D" },
-  ];
+ const FUEL_TYPES = [
+  { id: 1, label: "Z 91", small: "Z 91", icon: "z91.png" },
+  { id: 2, label: "Z X 95", small: "Z X 95", icon: "z95.png" },
+  { id: 3, label: "Z D", small: "Z D", icon: "zd.png" },
+];
+
 
   return (
     <div className={styles.screen}>
+      {/* ---- STATUS BAR ---- */}
+      <div className={styles.statusBar}>
+        <span className={styles.time}>9:41</span>
+
+        <img
+          src="/image/icons/zicons/Lev.svg"   
+          alt="status bar"
+          className={styles.statusIcon}
+        />
+      </div>
+
       {/* ---- HEADER ---- */}
       <div className={styles.header}>
         <button className={styles.backBtn} onClick={() => navigate(-1)}>
@@ -50,8 +62,15 @@ export default function AddVehicle() {
               }`}
               onClick={() => setSelectedFuel(fuel.id)}
             >
-              <div className={styles.fuelIcon}>⛽</div>
-              <p className={styles.fuelSmall}>{fuel.small}</p>
+              <div className={styles.fuelIconWrapper}>
+  <img
+    src={`/image/icons/zicons/${fuel.icon}`}
+    alt={fuel.label}
+    className={styles.fuelIcon}
+  />
+</div>
+<p className={styles.fuelSmall}>{fuel.small}</p>
+
             </div>
           ))}
         </div>
@@ -61,7 +80,7 @@ export default function AddVehicle() {
       <div className={styles.paymentRow}>
         <div className={styles.paymentLeft}>
           <img
-            src="/image/icons/zicons/card.png"
+            src="/image/icons/zicons/credit.svg"
             alt="card"
             className={styles.paymentIcon}
           />
@@ -81,16 +100,15 @@ export default function AddVehicle() {
       <div className={styles.toggleRow}>
         <div className={styles.toggleLeft}>
           <img
-            src="/image/icons/zicons/bell.png"
+            src="/image/icons/zicons/mobilebell.svg"
             alt="bell"
             className={styles.bellIcon}
           />
           <div>
-            <p className={styles.toggleTitle}>
-              Confirm my details on arrival
-            </p>
+            <p className={styles.toggleTitle}>Confirm my details on arrival</p>
             <p className={styles.toggleSubtitle}>
-              Recognise my plate but don’t want to authorise the pump automatically
+              Recognise my plate but don&apos;t want to authorise the pump
+              automatically
             </p>
           </div>
         </div>

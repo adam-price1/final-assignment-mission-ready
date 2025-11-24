@@ -10,28 +10,28 @@ function MapZoom() {
       {/* ---- MAP AREA ---- */}
       <div className={styles.mapContainer}>
         <img
-          src="/image/map.png"
+          src="/image/icons/zicons/maptop.png"
           alt="map"
           className={styles.mapImg}
         />
 
         {/* map marker */}
         <img
-          src="/image/icons/zicons/mapmarker.png"
+          src="/image/icons/zicons/orangepin.png"
           alt="marker"
           className={styles.pin}
         />
       </div>
 
-      {/* ---- ORANGE PANEL ---- */}
-      <div className={styles.panel}>
-        <div className={styles.stationcard}>
+       {/* ---- ORANGE PANEL ---- */}
+     <div className={styles.panel}>
+         <div className={styles.stationcard}>
           <img
             src="/image/icons/zicons/logos_google-maps.svg"
-            alt="Open map"
-            className={styles.mappin}
+           alt="Open map"
+             className={styles.mappin}
             onClick={() => navigate("/mobile/map")}
-          />
+           /> 
 
           {/* Header */}
           <h2 className={styles.stationtitle}>Z Kingsway Station</h2>

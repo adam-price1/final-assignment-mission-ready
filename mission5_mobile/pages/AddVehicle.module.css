@@ -3,6 +3,21 @@
     font-family: Inter, sans-serif;
 }
 
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px 4px;
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+}
+
+.statusIcon {
+  height: 30px;  /* adjust to match Figma */
+}
+
+
 /* header */
 .header{
     display: flex;
@@ -28,19 +43,21 @@
     font-size: 16px;
     font-weight: 600;
     color: #2f2f52;
+    text-align: left;
 }
 .sublabel{
     font-size: 13px;
     color: #8a8a9b;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 /* number plate */
-.platBox{
+.plateBox{
     background: white;
     border-radius: 16px;
     padding: 20px;
-    text-align: center;
+    text-align:center;
     font-size: 26px;
     letter-spacing: 8px;
     color: #d0d0d0;
@@ -65,11 +82,14 @@ align-items: center;
 justify-content: center; 
 cursor: pointer; 
 }
+
 .fuelSelected{
     outline: 3px solid #512fcd;
 }
 .fuelIcon{
-    font-size: 22px;
+    font-size: 26px;
+    object-fit: contain;
+  
 }
 .fuelSmall{
   font-size: 13px;

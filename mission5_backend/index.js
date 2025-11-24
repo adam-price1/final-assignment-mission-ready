@@ -6,6 +6,10 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import helmet from "helmet";
+
+import sharetankRouter from "./routes/sharetank.js"
+
+
 // import mongoSanitize from "express-mongo-sanitize";
 
 // 👉 Margaret’s routers
@@ -30,8 +34,16 @@ const limiter = rateLimit({
   message: "Too many requests, please try again later",
 });
 app.use(limiter);
+app.use("/api/sharetank", sharetankRouter);
 
 app.use(helmet());
+
+
+// sanitize Mongo inputs
+// app.use(mongoSanitize());
+
+// CORS
+
 
 app.use(
   cors({
