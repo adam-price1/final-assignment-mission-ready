@@ -1,20 +1,20 @@
 import mongoose from "mongoose";
 
-const MemberSchema = new mongoose.Schema(
-  {
-    name: String,
-    avatarUrl: String, // e.g. "/image/icons/sharetank/firstmember.png"
-  },
-  { _id: false }
-);
-
-const SharetankSchema = new mongoose.Schema({
-  tankKey: { type: String, required: true, unique: true }, // e.g. "demo-tank-1"
-  ownerUserId: String,
-  litres: Number,
-   maxLitres: Number,
-  maxMembers: { type: Number, default: 5 },
-  members: [MemberSchema],
+const memberSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  avatarUrl: { type: String },   // 👈 ADD THIS
+  litres: { type: Number, default: 0 },
+  userId: { type: String }       // optional
 });
 
-export default mongoose.model("Sharetank", SharetankSchema);
+const sharetankSchema = new mongoose.Schema({
+  tankKey: { type: String, required: true,  },
+  ownerUserId: { type: String, required: true },
+  litres: { type: Number, default: 0 },
+  maxLitres: { type: Number, default: 225 },
+  maxMembers: { type: Number, default: 5 },
+  members: [memberSchema]        // 👈 ensures avatarUrl is allowed
+});
+
+const Sharetank = mongoose.model("Sharetank", sharetankSchema);
+export default Sharetank;

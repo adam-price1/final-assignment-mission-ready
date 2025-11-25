@@ -32,7 +32,7 @@ import SharetankPage from "./components/SharetankPage";
 import PaymentPage from "./components/PaymentPage";
 
 /* Mobile site */
-import MobileApp from "../../mission5_mobile/mobile.jsx";
+import MobileApp from "./mission5_mobile/mobile.jsx";
 
 function App() {
   const location = useLocation();
