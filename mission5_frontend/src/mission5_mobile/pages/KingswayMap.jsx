@@ -48,9 +48,10 @@ function KingswayMap() {
       {/* ---- MAP AREA ---- */}
       <div className={styles.mapWrapper}>
         <img
-          src="/image/icons/zicons/kingsway.png"  // your Kingsway map image
+          src="/image/icons/zicons/kingsway.png"  //  Kingsway map image
           alt="Kingsway Map"
           className={styles.mapImage}
+         
         />
 
         {/* Z orange station pin */}
@@ -58,6 +59,7 @@ function KingswayMap() {
           src="/image/icons/zicons/center.svg"
           alt="Station"
           className={styles.stationPin}
+          onClick={() => navigate("/mobile/map")}
         />
 
         {/* Blue current-location pin */}

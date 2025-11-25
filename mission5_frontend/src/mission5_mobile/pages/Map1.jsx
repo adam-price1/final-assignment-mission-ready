@@ -63,7 +63,7 @@ function Map1() {
           src="/image/icons/zicons/center.svg"
           alt="station"
           className={styles.stationPin}
-          onClick={() => navigate("/mobile/map-kingsway")}
+          onClick={() => navigate("/mobile/map-zoom")}
         />
 
         <img

@@ -2,9 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./MapZoom.module.css";
 
+
 function MapZoom() {
   const navigate = useNavigate();
-
+  
   return (
     <div className={styles.screen}>
       {/* ---- MAP AREA ---- */}
@@ -13,6 +14,7 @@ function MapZoom() {
           src="/image/icons/zicons/maptop.png"
           alt="map"
           className={styles.mapImg}
+          
         />
 
         {/* map marker */}
@@ -20,6 +22,7 @@ function MapZoom() {
           src="/image/icons/zicons/orangepin.png"
           alt="marker"
           className={styles.pin}
+           onClick={() => navigate("/mobile/map-kingsway")}
         />
       </div>
 

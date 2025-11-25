@@ -19,7 +19,7 @@ import KingswayMap from "./pages/KingswayMap";
 import Map1 from "./pages/Map1";
 import MapZoom from "./pages/MapZoom";
 import MoreMenu from "./pages/MoreMenu";
-import Onboarding1 from "./pages/Onboarding1";
+
 import Onboarding2 from "./pages/Onboarding2";
 import Onboarding3 from "./pages/Onboarding3";
 import Onboarding4 from "./pages/Onboarding4";
@@ -79,7 +79,7 @@ export default function MobileApp() {
 
   const hiddenFooterRoutes = [
     "/mobile",
-    "/mobile/onboarding1",
+   
     "/mobile/onboarding2",
     "/mobile/onboarding3",
     "/mobile/onboarding4",
@@ -113,7 +113,7 @@ export default function MobileApp() {
           />
 
           {/* ONBOARDING */}
-          <Route path="onboarding1" element={<Onboarding1 />} />
+         
           <Route path="onboarding2" element={<Onboarding2 />} />
           <Route path="onboarding3" element={<Onboarding3 />} />
           <Route path="onboarding4" element={<Onboarding4 />} />
