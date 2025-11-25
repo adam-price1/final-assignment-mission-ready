@@ -1,4 +1,4 @@
-import FeaturesBlock from "./homeComponent/FeaturesBlock.jsx";
+import FeaturesBlock from "./HomeComponent/FeaturesBlock.jsx";
 // image import
 import homeBanner from "/image/banners/bannerHomePage.png";
 import heroImage from "/image/homepageHeroImage.png";

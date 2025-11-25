@@ -1,12 +1,14 @@
-import React from "react";
+import OnboardingLayout from "./OnboardingComponent/OnboardingLayout";
+import coffeeImage from "/image/onboarding1.png";
 
-function Onboarding2() {
+export default function Onboarding2() {
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h2>Save More on Fuel ⛽</h2>
-      <p>This is Onboarding Screen 2</p>
-    </div>
+    <OnboardingLayout
+      title="Order coffee"
+      image={coffeeImage}
+      description="Order your coffee from the best comfort zone of you"
+      page={1}
+      totalPages={3}
+    />
   );
 }
-
-export default Onboarding2;
