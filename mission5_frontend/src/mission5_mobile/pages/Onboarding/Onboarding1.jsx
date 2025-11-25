@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Onboarding.module.css";
-import zLogo from "/image/logo.png";
+import onboarding from "/image/Onboarding_1.png";
 
 function Onboarding1() {
   const navigate = useNavigate();
@@ -9,16 +9,14 @@ function Onboarding1() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/mobile/onboarding2");
-    }, 2000); // 2 seconds
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <div className={styles.topSection}>
-        <img src={zLogo} alt="Z logo" className={styles.logo} />
-      </div>
+    <div className={styles.startContainer}>
+      <img src={onboarding} alt="onboarding start" className={styles.start} />
     </div>
   );
 }
