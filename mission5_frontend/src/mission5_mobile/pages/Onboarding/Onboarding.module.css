@@ -1,0 +1,67 @@
+.startContainer {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.start {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff6a00;
+}
+
+.illustration {
+  width: 80%;
+  margin: 20px auto;
+  display: block;
+}
+
+.description {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #555;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 20px 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.active {
+  background: #ff6a00;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
+.arrow {
+  width: 15px;
+  transform: rotate(-135deg);
+  padding: 2px 5px 0px 0px;
+}
