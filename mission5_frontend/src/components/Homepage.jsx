@@ -1,4 +1,4 @@
-import FeatureBlock from "./homeComponent/FeaturesBlock.jsx";
+import FeaturesBlock from "./homeComponent/FeaturesBlock.jsx";
 // image import
 import homeBanner from "/image/banners/bannerHomePage.png";
 import heroImage from "/image/homepageHeroImage.png";
@@ -30,26 +30,29 @@ function Homepage() {
         />
       </section>
       <main>
-        <FeatureBlock
+        <FeaturesBlock
           kicker="Sharetank"
           title="Buy fuel and share it with up to 5 friends and family"
           body="Top up Sharetank and let your favorite people fill up at your price."
           ctaLabel="Sharetank"
+          ctaHref="/sharetank"
           imageSrc="/image/sharetank.png"
           imageAlt="Person filling car at pump"
         />
-        <FeatureBlock
+        <FeaturesBlock
           title="Price comparison"
           body="Compare fuel prices with nearby stations."
           ctaLabel="Price comparison"
+          ctaHref="/price-comparison"
           imageSrc="/image/priceSign.png"
           imageAlt="Z price board"
           reverse
         />
-        <FeatureBlock
+        <FeaturesBlock
           title="Order food online"
           body="Order food and drinks via the app and pick up at the station."
           ctaLabel="Order Food"
+          ctaHref="/selection"
           imageSrc="/image/food.png"
           imageAlt="Coffee and sandwich"
         />
