@@ -3,26 +3,34 @@ import Sharetank from "../models/Sharetank.js";
 
 const router = Router();
 
-// add a member
-router.post("/:id/members", async (req, res) => {
+// GET /api/sharetank/demo-tank-1
+router.get("/:tankKey", async (req, res) => {
   try {
-    const { name, email, avatarUrl } = req.body;
-
-    const tank = await Sharetank.findById(req.params.id);
-    if (!tank) return res.status(404).json({ error: "Sharetank not found" });
-
-    if (tank.members.length >= 5) {
-      return res.status(400).json({ error: "Max 5 members" });
-    }
-
-    tank.members.push({ name, email, avatarUrl });
-    await tank.save();
-
+    const tank = await Sharetank.findOne({ tankKey: req.params.tankKey });
+    if (!tank) return res.status(404).json({ error: "Tank not found" });
     res.json(tank);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to add member" });
+    console.error("[GET /sharetank/:tankKey] error:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// POST /api/sharetank/demo-tank-1/members   (for your handleAddMember)
+router.post("/:tankKey/members", async (req, res) => {
+  try {
+    const { name, avatarUrl } = req.body;
+    const tank = await Sharetank.findOne({ tankKey: req.params.tankKey });
+    if (!tank) return res.status(404).json({ error: "Tank not found" });
+
+    tank.members.push({ name, avatarUrl });
+    await tank.save();
+    res.status(201).json(tank);
+  } catch (err) {
+    console.error("[POST /sharetank/:tankKey/members] error:", err);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
 export default router;
+
+

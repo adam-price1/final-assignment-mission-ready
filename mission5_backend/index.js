@@ -7,12 +7,9 @@ import cors from "cors";
 import mongoose from "mongoose";
 import helmet from "helmet";
 
-import sharetankRouter from "./routes/sharetank.js"
-
-
-// import mongoSanitize from "express-mongo-sanitize";
 
 // 👉 Margaret’s routers
+import sharetankRouter from "./routes/sharetank.js"
 import stationsRouter from "./routes/stations.js";
 import vehiclesRouter from "./routes/vehicle.js";
 
@@ -33,23 +30,9 @@ const limiter = rateLimit({
   max: 100,
   message: "Too many requests, please try again later",
 });
-app.use(limiter);
-app.use("/api/sharetank", sharetankRouter);
 
 app.use(helmet());
 
-
-// sanitize Mongo inputs
-// app.use(mongoSanitize());
-
-// CORS
-
-
-app.use(
-  cors({
-    origin: process.env.CORS_ORIGIN || "http://localhost:5173",
-  })
-);
 
 app.use(express.json());
 
@@ -66,16 +49,24 @@ async function start() {
   try {
     await mongoose.connect(mongoUri);
     console.log("✅ MongoDB connected:", mongoUri);
-
+    
     if (process.env.SEED === "true") {
       console.log("🌱 Running seed script...");
       await runSeed();
       console.log("🌱 Seed complete.");
     }
-
+    
+    app.use(
+      cors({
+        origin: process.env.CORS_ORIGIN || "http://localhost:5173",
+      })
+    );
+    
+    app.use(limiter);
     /* ---------- ROUTES (Loaded once) ---------- */
-
+    
     // margaret
+    app.use("/api/sharetank", sharetankRouter);
     app.use("/api/stations", stationsRouter);
     app.use("/api/vehicles", vehiclesRouter);
 

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SharetankApp.module.css";
 
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4000";
+
+
 export default function Sharetank() {
   const navigate = useNavigate();
 
@@ -16,11 +19,11 @@ export default function Sharetank() {
   const members = tank?.members || [];
   const remainingSlots = Math.max(0, maxMembers - members.length);
 
-  // Load the tank + members from backend 
+ // Load the tank + members from backend
   useEffect(() => {
     async function loadTank() {
       try {
-        const res = await fetch(`/api/sharetank/${tankId}`);
+        const res = await fetch(`${API_BASE}/api/sharetank/${tankId}`);
         if (!res.ok) throw new Error("Failed to load tank");
         const data = await res.json();
         setTank(data);
@@ -31,21 +34,26 @@ export default function Sharetank() {
 
     loadTank();
   }, [tankId]);
-
-  // Add a new member (third, fourth, fifth “+ Add”)
+   // Add a new member (third, fourth, fifth “+ Add”)
   async function handleAddMember() {
     try {
-      await fetch(`/api/sharetank/${tankId}/members`, {
+      // 1) create new member
+      const res = await fetch(`${API_BASE}/api/sharetank/${tankId}/members`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: "New friend",
-          avatarUrl: "/image/icons/sharetank2/secondmember.jpg", // or user3.png if you add it
+          avatarUrl: "/image/icons/sharetank2/secondmember.jpg",
         }),
       });
+     
+     
+       if (!res.ok) throw new Error("Failed to add member");
 
-      const res = await fetch(`/api/sharetank/${tankId}`);
-      const data = await res.json();
+      // 2) reload tank so UI updates
+      const res2 = await fetch(`${API_BASE}/api/sharetank/${tankId}`);
+      if (!res2.ok) throw new Error("Failed to reload tank");
+      const data = await res2.json();
       setTank(data);
     } catch (err) {
       console.error("[handleAddMember] error:", err);

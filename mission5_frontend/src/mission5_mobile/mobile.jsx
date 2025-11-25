@@ -1,5 +1,5 @@
-import React from "react";
 import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
+import React from "react";
 import styles from "./MobileOverlay.module.css";
 
 /* IMPORT ALL MOBILE PAGES */
@@ -146,7 +146,7 @@ export default function MobileApp() {
           {/* QR + MORE + MISC */}
           <Route path="scan" element={<ScanQRCode />} />
           <Route path="more" element={<MoreMenu />} />
-          <Route path="sharetank" element={<Sharetank />} />
+          <Route path="sharetank/:tankId" element={<Sharetank />} />
           <Route path="howitworks" element={<HowItWorksPage />} />
           <Route path="add-vehicle" element={<AddVehicle />} />
 
