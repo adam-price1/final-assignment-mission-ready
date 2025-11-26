@@ -156,29 +156,29 @@ export default function GingerbreadLatte() {
   <div className={styles.twoCol}>
     <div className={styles.col}>
       <label className={styles.radioOption}>
-        <input type="radio" value="full" /> <span>Full cream</span>
+        <input type="radio" value="full" /> <span>Full Cream</span>
       </label>
 
       <label className={styles.radioOption}>
-        <input type="radio" value="almond" /> <span>Almond milk</span>
+        <input type="radio" value="trim" /> <span>Trim Milk</span>
       </label>
 
       <label className={styles.radioOption}>
-        <input type="radio" value="coconut" /> <span>Coconut milk</span>
+        <input type="radio" value="almond" /> <span>Almond Milk</span>
       </label>
     </div>
 
     <div className={styles.col}>
       <label className={styles.radioOption}>
-        <input type="radio" value="trim" /> <span>Trim milk</span>
+        <input type="radio" value="oat" /> <span>Oat Milk</span>
       </label>
 
       <label className={styles.radioOption}>
-        <input type="radio" value="oat" /> <span>Oat milk</span>
+        <input type="radio" value="coconut" /> <span>Coconut Milk</span>
       </label>
 
       <label className={styles.radioOption}>
-        <input type="radio" value="nomilk" /> <span>No milk</span>
+        <input type="radio" value="nomilk" /> <span>No Milk</span>
       </label>
     </div>
   </div>
@@ -276,11 +276,11 @@ export default function GingerbreadLatte() {
         <input
           type="radio"
           name="flavour"
-          value="hazelnut"
-          checked={flavour === "hazelnut"}
-          onChange={() => setFlavour("hazelnut")}
+          value="caramel"
+          checked={flavour === "caramel"}
+          onChange={() => setFlavour("caramel")}
         />
-        <span>Hazelnut</span>
+        <span>Caramel</span>
       </label>
     </div>
 
@@ -290,11 +290,11 @@ export default function GingerbreadLatte() {
         <input
           type="radio"
           name="flavour"
-          value="caramel"
-          checked={flavour === "caramel"}
-          onChange={() => setFlavour("caramel")}
+          value="hazelnut"
+          checked={flavour === "hazelnut"}
+          onChange={() => setFlavour("hazelnut")}
         />
-        <span>Caramel</span>
+        <span>Hazelnut</span>
       </label>
 
       <label className={styles.radioOption}>
