@@ -73,7 +73,12 @@ export default async function runSeed() {
       {
        name: "cutebunny",
        avatarUrl:"/image/icons/sharetank2/cutebunny.jpg"
-      }
+      },
+      {
+       name: "cutebunny",
+       avatarUrl:"/image/icons/sharetank2/chicken.jpg"
+      },
+      
       
     ]
   });

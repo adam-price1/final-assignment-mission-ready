@@ -1,5 +1,5 @@
 .screen {
-  min-height: 100%;
+  min-height: 100vh;
   background: #f3f3f7;
   display: flex;
   justify-content: center;
@@ -16,6 +16,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height:100%;
 }
 
 /* ---- STATUS BAR ---- */

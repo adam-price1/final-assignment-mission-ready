@@ -35,7 +35,8 @@ import TopUpOverlay from "./pages/TopUpOverlay";
 import VegetarianFoodPage from "./pages/VegetarianFoodPage";
 import HowItWorksPage from "./pages/HowItWorksPage";
 import PaymentLoading from "./pages/PaymentLoading";
-import GingerbreadLatte from "./pages/GingerbreadLatte";
+import GingerbreadLatte from "./pages/GingerbreadLatte.jsx";
+import SharetankHome from "./pages/SharetankHome.jsx";
 
 
 
@@ -153,6 +154,7 @@ export default function MobileApp() {
           <Route path="scan" element={<ScanQRCode />} />
           <Route path="more" element={<MoreMenu />} />
           <Route path="sharetank/:tankId" element={<Sharetank />} />
+          <Route path="sharetankhome" element={<SharetankHome />} />
           <Route path="howitworks" element={<HowItWorksPage />} />
           <Route path="add-vehicle" element={<AddVehicle />} />
 
