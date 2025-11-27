@@ -141,7 +141,26 @@ export default async function runSeed() {
     ownerUserId: "demo-user-1",
     litres: 115,
     maxLitres: 225,
-    members: [{ name: "Alex" }, { name: "Sarah" }, { name: "cutebunny" }],
+    members: [
+      {
+        name: "Alex",
+        avatarUrl: "/image/icons/sharetank2/firstmember.jpg"
+      },
+      {
+        name: "Sarah",
+        avatarUrl: "/image/icons/sharetank2/secondmember.jpg"
+      },
+      {
+       name: "cutebunny",
+       avatarUrl:"/image/icons/sharetank2/cutebunny.jpg"
+      },
+      {
+       name: "cutebunny",
+       avatarUrl:"/image/icons/sharetank2/chicken.jpg"
+      },
+      
+      
+    ]
   });
 
   console.log(" Inserting PopUps...");
