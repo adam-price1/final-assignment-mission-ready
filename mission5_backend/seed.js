@@ -1,11 +1,9 @@
 import Station from "./models/Station.js";
 import Vehicle from "./models/Vehicle.js";
 import Sharetank from "./models/Sharetank.js";
-import PopUp from "./models/PopUp.js";
 
 import FuelPrice from "./models/FuelPrice.js";
 import QRCode from "./models/QRCode.js";
-import Transactions from "./models/Transactions.js";
 
 export default async function runSeed() {
   console.log(" Clearing old data...");
@@ -13,10 +11,8 @@ export default async function runSeed() {
   await Station.deleteMany();
   await Vehicle.deleteMany();
   await Sharetank.deleteMany();
-  await PopUp.deleteMany();
   await FuelPrice.deleteMany();
   await QRCode.deleteMany();
-  await Transactions.deleteMany();
 
   console.log(" Inserting stations...");
   const stations = await Station.insertMany([
@@ -121,7 +117,6 @@ export default async function runSeed() {
   );
 
   await FuelPrice.insertMany(fuelPrices);
-
   console.log(" Fuel prices inserted!");
 
   console.log(" Inserting vehicles...");
@@ -144,29 +139,12 @@ export default async function runSeed() {
     members: [{ name: "Alex" }, { name: "Sarah" }, { name: "cutebunny" }],
   });
 
-  console.log(" Inserting PopUps...");
-  await PopUp.insertMany([
-    { userId: "demo-user-1", amount: 20, date: new Date() },
-    { userId: "demo-user-1", amount: 40, date: new Date() },
-  ]);
-
   console.log(" Inserting QR Code...");
   await QRCode.create({
     code: "ABC123XYZ",
     station: "Z Kingsway Station",
     expires: new Date(Date.now() + 86400000),
   });
-
-  console.log(" Inserting Transactions...");
-  await Transactions.insertMany([
-    {
-      fuelType: "Z 91",
-      litres: 20,
-      pricePerLitre: 2.89,
-      totalPaid: 57.8,
-      date: new Date(),
-    },
-  ]);
 
   console.log("🌱 Seed complete!");
 }

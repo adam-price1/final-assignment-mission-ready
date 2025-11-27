@@ -17,12 +17,7 @@ import authRouter from "./routes/auth.js";
 
 // 👉 Adam’s routes
 import customRouter from "./routes/custom.js";
-
-// ⭐ NEW Adam backend routes
-import priceRouter from "./routes/prices.js";
-import popupRouter from "./routes/popup.js";
-import qrcodeRouter from "./routes/qrcode.js";
-import transactionsRouter from "./routes/transactions.js";
+import qrcodeRouter from "./routes/qrcode.js"; // ✔ KEEP ONLY IF FILE EXISTS
 
 import runSeed from "./seed.js";
 
@@ -51,6 +46,7 @@ async function start() {
     await mongoose.connect(mongoUri);
     console.log("✅ MongoDB connected:", mongoUri);
 
+    // Seed DB
     if (process.env.SEED === "true") {
       console.log("🌱 Running seed script...");
       await runSeed();
@@ -67,22 +63,19 @@ async function start() {
 
     /* ---------- ROUTES ---------- */
 
-    // margaret
+    // Margaret
     app.use("/api/sharetank", sharetankRouter);
     app.use("/api/stations", stationsRouter);
     app.use("/api/vehicles", vehiclesRouter);
 
-    // jordan
+    // Jordan
     app.use("/api/auth", authRouter);
 
-    // adam
+    // Adam
     app.use("/api/custom", customRouter);
-    app.use("/api/prices", priceRouter);
-    app.use("/api/popup", popupRouter);
-    app.use("/api/qrcode", qrcodeRouter);
-    app.use("/api/transactions", transactionsRouter);
+    app.use("/api/qrcode", qrcodeRouter); // only if file exists
 
-    // health check
+    // Health check
     app.get("/", (req, res) => {
       res.json({ status: "ok" });
     });

@@ -95,10 +95,6 @@ export default function PaymentPage() {
 
       <Footer />
 
-      {/* --------------------------------
-           🔥 OVERLAYS (Conditional)
-      --------------------------------- */}
-
       {/* Payment Form Overlay */}
       {showPaymentForm && (
         <PaymentOverlay onClose={closeAll} onSubmit={handlePaymentSubmit} />
