@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./MapZoom.module.css";
+import {Link} from "react-router-dom";
 
 
 function MapZoom() {
@@ -67,7 +68,12 @@ function MapZoom() {
         <div className={styles.stationbigButton}>
           <div>
             <p className={styles.stationbtnTitle}>Worried about Prices?</p>
-            <a className={styles.stationlink}>Click here</a>
+           <Link
+     to="/price-compare"
+    className={styles.stationlink}
+  >
+    Click here
+  </Link>
           </div>
           <img
             src="/image/icons/zicons/dollarsign.svg"
