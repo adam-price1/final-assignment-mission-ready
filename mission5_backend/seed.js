@@ -1,6 +1,11 @@
 import Station from "./models/Station.js";
 import Vehicle from "./models/Vehicle.js";
 import Sharetank from "./models/Sharetank.js";
+import PopUp from "./models/PopUp.js";
+
+import FuelPrice from "./models/FuelPrice.js";
+import QRCode from "./models/QRCode.js";
+import Transactions from "./models/Transactions.js";
 
 export default async function runSeed() {
   console.log(" Clearing old data...");
@@ -8,20 +13,24 @@ export default async function runSeed() {
   await Station.deleteMany();
   await Vehicle.deleteMany();
   await Sharetank.deleteMany();
+  await PopUp.deleteMany();
+  await FuelPrice.deleteMany();
+  await QRCode.deleteMany();
+  await Transactions.deleteMany();
 
   console.log(" Inserting stations...");
-  await Station.insertMany([
+  const stations = await Station.insertMany([
     {
       name: "Z Kingsway Station",
       address: "26 Clevedon Road, Papakura",
       phone: "09 2988185",
       hours: [
         { day: "Sun", open: "24 Hours" },
-        { day: "Mon", open: "24 Hours" }
+        { day: "Mon", open: "24 Hours" },
       ],
       services: ["toilet", "fuel", "coffee", "atm"],
       lat: -37.062,
-      lng: 174.952
+      lng: 174.952,
     },
     {
       name: "Z Manurewa",
@@ -29,13 +38,91 @@ export default async function runSeed() {
       phone: "09 1234567",
       hours: [
         { day: "Sun", open: "24 Hours" },
-        { day: "Mon", open: "24 Hours" }
+        { day: "Mon", open: "24 Hours" },
       ],
       services: ["toilet", "coffee"],
       lat: -36.995,
-      lng: 174.875
-    }
+      lng: 174.875,
+    },
+    {
+      name: "Z Albany",
+      address: "Albany, Auckland",
+      phone: "09 4152332",
+      services: ["fuel", "toilet", "atm", "carwash"],
+      lat: -36.72716,
+      lng: 174.70751,
+    },
+    {
+      name: "Z Sylvia Park",
+      address: "Mount Wellington, Auckland",
+      phone: "09 5735669",
+      services: ["fuel", "toilet", "coffee"],
+      lat: -36.90721,
+      lng: 174.84558,
+    },
+    {
+      name: "Z Westgate",
+      address: "Massey, Auckland",
+      phone: "09 8322990",
+      services: ["fuel", "toilet", "atm"],
+      lat: -36.81767,
+      lng: 174.60896,
+    },
+    {
+      name: "Z Greenlane",
+      address: "Greenlane, Auckland",
+      phone: "09 5241464",
+      services: ["fuel", "toilet", "coffee"],
+      lat: -36.88792,
+      lng: 174.78092,
+    },
+    {
+      name: "Z Manukau",
+      address: "Manukau, Auckland",
+      phone: "09 2620848",
+      services: ["fuel", "carwash", "coffee"],
+      lat: -36.9923,
+      lng: 174.87887,
+    },
+    {
+      name: "Z Henderson Valley",
+      address: "Henderson, Auckland",
+      phone: "09 8361301",
+      services: ["fuel", "toilet"],
+      lat: -36.88406,
+      lng: 174.62268,
+    },
+    {
+      name: "Z Ponsonby",
+      address: "Ponsonby, Auckland",
+      phone: "09 3763577",
+      services: ["fuel", "coffee", "atm"],
+      lat: -36.84533,
+      lng: 174.73821,
+    },
   ]);
+
+  console.log(" Inserting Fuel Prices for ALL stations...");
+
+  const fuelTypes = ["Z 91", "Z X95", "Z Diesel"];
+
+  const fuelPrices = stations.flatMap((station) =>
+    fuelTypes.map((type) => ({
+      stationId: station._id,
+      fuelType: type,
+      price:
+        type === "Z 91"
+          ? 2.89 + Math.random() * 0.2
+          : type === "Z X95"
+          ? 3.19 + Math.random() * 0.2
+          : 2.49 + Math.random() * 0.2,
+      lastUpdated: new Date(),
+    }))
+  );
+
+  await FuelPrice.insertMany(fuelPrices);
+
+  console.log(" Fuel prices inserted!");
 
   console.log(" Inserting vehicles...");
   await Vehicle.insertMany([
@@ -44,15 +131,8 @@ export default async function runSeed() {
       plate: "ABC123",
       fuelType: "Z 91",
       paymentMethod: "visa-1234",
-      confirmOnArrival: true
+      confirmOnArrival: true,
     },
-    {
-      userId: "demo-user-2",
-      plate: "XYZ987",
-      fuelType: "Z X 95",
-      paymentMethod: "mastercard-9876",
-      confirmOnArrival: false
-    }
   ]);
 
   console.log(" Inserting Sharetank...");
@@ -82,6 +162,30 @@ export default async function runSeed() {
       
     ]
   });
+
+  console.log(" Inserting PopUps...");
+  await PopUp.insertMany([
+    { userId: "demo-user-1", amount: 20, date: new Date() },
+    { userId: "demo-user-1", amount: 40, date: new Date() },
+  ]);
+
+  console.log(" Inserting QR Code...");
+  await QRCode.create({
+    code: "ABC123XYZ",
+    station: "Z Kingsway Station",
+    expires: new Date(Date.now() + 86400000),
+  });
+
+  console.log(" Inserting Transactions...");
+  await Transactions.insertMany([
+    {
+      fuelType: "Z 91",
+      litres: 20,
+      pricePerLitre: 2.89,
+      totalPaid: 57.8,
+      date: new Date(),
+    },
+  ]);
 
   console.log("🌱 Seed complete!");
 }

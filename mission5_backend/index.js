@@ -7,9 +7,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import helmet from "helmet";
 
-
 // 👉 Margaret’s routers
-import sharetankRouter from "./routes/sharetank.js"
+import sharetankRouter from "./routes/sharetank.js";
 import stationsRouter from "./routes/stations.js";
 import vehiclesRouter from "./routes/vehicle.js";
 
@@ -19,12 +18,17 @@ import authRouter from "./routes/auth.js";
 // 👉 Adam’s routes
 import customRouter from "./routes/custom.js";
 
+// ⭐ NEW Adam backend routes
+import priceRouter from "./routes/prices.js";
+import popupRouter from "./routes/popup.js";
+import qrcodeRouter from "./routes/qrcode.js";
+import transactionsRouter from "./routes/transactions.js";
+
 import runSeed from "./seed.js";
 
 const app = express();
 
 /* ---------- Security & parsing ---------- */
-
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -32,12 +36,9 @@ const limiter = rateLimit({
 });
 
 app.use(helmet());
-
-
 app.use(express.json());
 
 /* ---------- MongoDB ---------- */
-
 const mongoUri = process.env.MONGODB_URI;
 
 if (!mongoUri) {
@@ -49,22 +50,23 @@ async function start() {
   try {
     await mongoose.connect(mongoUri);
     console.log("✅ MongoDB connected:", mongoUri);
-    
+
     if (process.env.SEED === "true") {
       console.log("🌱 Running seed script...");
       await runSeed();
       console.log("🌱 Seed complete.");
     }
-    
+
     app.use(
       cors({
         origin: process.env.CORS_ORIGIN || "http://localhost:5173",
       })
     );
-    
+
     app.use(limiter);
-    /* ---------- ROUTES (Loaded once) ---------- */
-    
+
+    /* ---------- ROUTES ---------- */
+
     // margaret
     app.use("/api/sharetank", sharetankRouter);
     app.use("/api/stations", stationsRouter);
@@ -75,6 +77,10 @@ async function start() {
 
     // adam
     app.use("/api/custom", customRouter);
+    app.use("/api/prices", priceRouter);
+    app.use("/api/popup", popupRouter);
+    app.use("/api/qrcode", qrcodeRouter);
+    app.use("/api/transactions", transactionsRouter);
 
     // health check
     app.get("/", (req, res) => {
