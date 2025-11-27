@@ -5,7 +5,7 @@ const VehicleSchema = new mongoose.Schema(
     // replace with real user
     userId: { type: String, required: true },
     plate: { type: String, required: true },
-    fuelType: { type: String, reuqired: true },
+    fuelType: { type: String, required: true },
     paymentMethod: { type: String },
     confirmOnArrival: { type: Boolean, default: false },
   },
