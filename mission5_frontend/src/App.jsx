@@ -13,11 +13,6 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Header1 from "./components/Header/Header1";
 
-/* Overlays (no header/footer) */
-import DeclinedOverlayPage from "./components/OrderOnline/OverlayComponents/DeclinedOverlayPage";
-import OrderConfirmOverlay from "./components/OrderOnline/OverlayComponents/OrderConfirmOverlay";
-import PaymentOverlay from "./components/OrderOnline/OverlayComponents/PaymentOverlay";
-
 /* Desktop pages */
 import Homepage from "./components/Homepage";
 import CreateAccount from "./components/CreateAccount";
@@ -27,8 +22,6 @@ import LandingPage from "./components/OrderOnline/LandingPage";
 import SelectionPage from "./components/OrderOnline/SelectionPage";
 import LoginPage from "./components/LoginPage";
 import SharetankPage from "./components/SharetankPage";
-
-/* Desktop Payment Page */
 import PaymentPage from "./components/PaymentPage";
 
 /* Mobile site */
@@ -38,15 +31,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  /* Routes where header/footer should not show */
-  const excludedRoutes = [
-    "/payment",
-    "/order-confirm",
-    "/declined",
-    "/mobile",
-    "/payment-page",
-  ];
-
+  /* MOBILE REDIRECT HANDLER */
   useEffect(() => {
     const handleResize = () => {
       const isMobile =
@@ -54,8 +39,6 @@ function App() {
         /iPhone|Android|Mobile/i.test(navigator.userAgent);
 
       const onMobilePath = location.pathname.startsWith("/mobile");
-
-      /* Keep same route when switching */
       const current = location.pathname.replace("/mobile", "");
 
       if (isMobile && !onMobilePath) {
@@ -70,15 +53,10 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, [location.pathname, navigate]);
 
-  /* Check if header/footer should be hidden */
-  const isExcludedRoute = excludedRoutes.some((route) =>
-    location.pathname.startsWith(route)
-  );
-
   return (
     <>
-      {!isExcludedRoute && <Header />}
-      {!isExcludedRoute && <Header1 />}
+      <Header />
+      <Header1 />
 
       <Routes>
         {/* Desktop pages */}
@@ -90,20 +68,13 @@ function App() {
         <Route path="/find-station" element={<FindFuelStation />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sharetank" element={<SharetankPage />} />
-
-        {/* Desktop payment page */}
         <Route path="/payment-page" element={<PaymentPage />} />
-
-        {/* Overlays */}
-        <Route path="/payment" element={<PaymentOverlay />} />
-        <Route path="/order-confirm" element={<OrderConfirmOverlay />} />
-        <Route path="/declined" element={<DeclinedOverlayPage />} />
 
         {/* Mobile site */}
         <Route path="/mobile/*" element={<MobileApp />} />
       </Routes>
 
-      {!isExcludedRoute && <Footer />}
+      <Footer />
     </>
   );
 }

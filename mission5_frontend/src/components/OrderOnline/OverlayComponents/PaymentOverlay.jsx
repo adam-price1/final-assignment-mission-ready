@@ -8,11 +8,15 @@ const PaymentOverlay = ({ onClose, onSubmit }) => {
   const [cvv, setCvv] = useState("");
   const [name, setName] = useState("");
 
-  // Prevent form reload + pass to parent handler
+  const handleBackgroundClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Optional: simple validation
     if (!card || !expiry || !cvv || !name) {
       alert("Please fill all fields");
       return;
@@ -22,14 +26,12 @@ const PaymentOverlay = ({ onClose, onSubmit }) => {
   };
 
   return (
-    <div className={styles.overlayWrapper}>
+    <div className={styles.overlayWrapper} onClick={handleBackgroundClick}>
       <div className={`${styles.overlayContainer} ${styles.paymentOverlay}`}>
-        {/* Header Image */}
         <div className={styles.overlayHeader}>
           <img src={headerImg} alt="Payment Header" />
         </div>
 
-        {/* Form */}
         <div className={styles.overlayText}>
           <form onSubmit={handleSubmit}>
             <div className={styles.formField}>
@@ -74,13 +76,11 @@ const PaymentOverlay = ({ onClose, onSubmit }) => {
           </form>
         </div>
 
-        {/* Buttons */}
         <div className={styles.buttonRow}>
           <button className={styles.btnCancel} onClick={onClose}>
             Cancel
           </button>
 
-          {/* Submit triggers parent handler */}
           <button className={styles.btnPrimary} onClick={handleSubmit}>
             Pay
           </button>
